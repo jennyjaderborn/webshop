@@ -1,0 +1,61 @@
+body {
+   margin: 0px;
+   padding: 0px;
+}
+
+#meny {
+    color: white;
+    background-color: black;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menyval {
+    font-size: 16px;
+}
+
+.menyval:hover {
+    color: lightblue;
+}
+
+#content {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+#underkategorierna {
+    background-color: black;
+    color: white;
+    padding-top: 20px;
+    height: 400px;
+}
+
+.underkategorival {
+    margin: 15px;
+    font-family: "courier new"
+}
+
+#produkterna {
+    width: 800px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.produktbild {
+    width: 300px;
+    margin-bottom: 10px;
+   
+}
+
+.produktval {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    font-family: "courier new";
+    text-align: center;
+}

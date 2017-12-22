@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "underkategori": "Belysning",
+        "huvudkategori": 1
+    },{
+        "id": 2,
+        "underkategori": "Glas",
+        "huvudkategori": 2
+    },{
+        "id": 3,
+        "underkategori": "Tavlor",
+        "huvudkategori": 1
+    },{
+        "id": 4,
+        "underkategori": "Handdukar",
+        "huvudkategori": 3
+    },{
+        "id": 5,
+        "underkategori": "Duschdraperier",
+        "huvudkategori": 3
+    },{
+        "id": 6,
+        "underkategori": "Möbler",
+        "huvudkategori": 1
+    },{
+        "id": 7,
+        "underkategori": "Kuddar och filtar",
+        "huvudkategori": 1
+    },{
+        "id": 8,
+        "underkategori": "Tvättkorgar",
+        "huvudkategori": 3
+    },{
+        "id": 9,
+        "underkategori": "Badrumsaccessoarer",
+        "huvudkategori": 3
+    },{
+        "id": 10,
+        "underkategori": "Övriga köksredskap",
+        "huvudkategori": 2
+    },{
+        "id": 11,
+        "underkategori": "Kastruller och stekpannor",
+        "huvudkategori": 2
+    },{
+        "id": 12,
+        "underkategori": "Tallrikar och porslin",
+        "huvudkategori": 2
+    },{
+        "id": 13,
+        "underkategori": "Utemöbler",
+        "huvudkategori": 4
+    },{
+        "id": 14,
+        "underkategori": "Krukor",
+        "huvudkategori": 4
+    },{
+        "id": 15,
+        "underkategori": "Ljus och lyktor",
+        "huvudkategori": 4
+    }
+    ,{
+        "id": 16,
+        "underkategori": "Trädgårdsredskap",
+        "huvudkategori": 4
+    }
+]

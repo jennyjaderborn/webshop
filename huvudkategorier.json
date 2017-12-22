@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "huvudkategori": "Inredning"
+    },{
+        "id": 2,
+        "huvudkategori": "Köket"
+    },{
+        "id": 3,
+        "huvudkategori": "Badrum"
+    },{
+        "id": 4,
+        "huvudkategori": "Utomhus"
+    }
+]

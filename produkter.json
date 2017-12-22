@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "produktNamn": "Bordslampa Betongfot",
+        "produktBeskrivning": "Bordslampa med betongfot och 1,65 m lång grå textilsladd. Strömbrytaren är en liten spak som sitter på lampfoten. Observera att ljuskällan inte ingår.",
+        "produktPris": 379,
+        "huvudkategori": 1,
+        "underkategori": 1,
+        "image": "bordslampa.jpg"
+    }, {
+        "id": 1,
+        "produktNamn": "Bygglampa svart",
+        "produktBeskrivning": "Praktisk bygglampa som kan hängas i gallerkrok eller kabel. Lampan är IP44-klassad och kan även användas för utomhusbruk. 5m kabel med SEMKO-certifierad EU-stickpropp. 220V/60W CE-märkt och RoHS-certifierad.",
+        "produktPris": 379,
+        "huvudkategori": 1,
+        "underkategori": 1,
+        "image": "bygglampa.jpg"
+    },{
+        "id": 1,
+        "produktNamn": "Ljusslinga Glödlampa LED Svart",
+        "produktBeskrivning": "Bordslampa med betongfot och 1,65 m lång grå textilsladd. Strömbrytaren är en liten spak som sitter på lampfoten. Observera att ljuskällan inte ingår.",
+        "produktPris": 469,
+        "huvudkategori": 1,
+        "underkategori": 1,
+        "image": "ljusslinga.jpg"
+    },{
+        "id": 1,
+        "produktNamn": "Stjärna 40 cm LED",
+        "produktBeskrivning": "Stjärna i gjuten plast med 24st LED-lampor som kan användas både inom- och utomhus. Transformator som ansluts till vägguttag medföljer.",
+        "produktPris": 329,
+        "huvudkategori": 1,
+        "underkategori": 1,
+        "image": "stjarna.jpg"
+    }
+]
