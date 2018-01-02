@@ -10,6 +10,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-family: "courier new";
 }
 
 .menyval {
@@ -26,6 +27,7 @@ body {
     display: flex;
     justify-content: space-around;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #underkategorierna {
@@ -59,4 +61,34 @@ body {
     margin: 30px;
     font-family: "courier new";
     text-align: center;
+}
+
+#produktSida {
+    width: 800px;
+    display: flex;
+    justify-content: center;
+}
+
+.helaProduktSidan {
+    width: 800px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+
+}
+
+.produktSidaBild {
+width: 400px;
+margin: auto;
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    margin: auto;
+    background-color: #5A385A;
+    color: white;
+    font-size: 14px;
+    border:none;
+    border-radius: 2px;
 }

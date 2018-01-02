@@ -6,30 +6,398 @@
         "produktPris": 379,
         "huvudkategori": 1,
         "underkategori": 1,
-        "image": "bordslampa.jpg"
+        "image": "./images/bordslampa.jpg"
     }, {
-        "id": 1,
+        "id": 2,
         "produktNamn": "Bygglampa svart",
         "produktBeskrivning": "Praktisk bygglampa som kan hängas i gallerkrok eller kabel. Lampan är IP44-klassad och kan även användas för utomhusbruk. 5m kabel med SEMKO-certifierad EU-stickpropp. 220V/60W CE-märkt och RoHS-certifierad.",
         "produktPris": 379,
         "huvudkategori": 1,
         "underkategori": 1,
-        "image": "bygglampa.jpg"
+        "image": "./images/bygglampa.jpg"
     },{
-        "id": 1,
+        "id": 3,
         "produktNamn": "Ljusslinga Glödlampa LED Svart",
         "produktBeskrivning": "Bordslampa med betongfot och 1,65 m lång grå textilsladd. Strömbrytaren är en liten spak som sitter på lampfoten. Observera att ljuskällan inte ingår.",
         "produktPris": 469,
         "huvudkategori": 1,
         "underkategori": 1,
-        "image": "ljusslinga.jpg"
+        "image": "./images/ljusslinga.jpg"
     },{
-        "id": 1,
+        "id": 4,
         "produktNamn": "Stjärna 40 cm LED",
         "produktBeskrivning": "Stjärna i gjuten plast med 24st LED-lampor som kan användas både inom- och utomhus. Transformator som ansluts till vägguttag medföljer.",
         "produktPris": 329,
         "huvudkategori": 1,
         "underkategori": 1,
-        "image": "stjarna.jpg"
+        "image": "./images/stjarna.jpg"
+    },{
+        "id": 5,
+        "produktNamn": "Karaff Glas 1 L",
+        "produktBeskrivning": "Karaff i värmetåligt borosilikatglas. Volym: 1L",
+        "produktPris": 159,
+        "huvudkategori": 2,
+        "underkategori": 2,
+        "image": "./images/karaff.jpg"
+    },{
+        "id": 6,
+        "produktNamn": "Mugg Glas 30 cl",
+        "produktBeskrivning": "Glasmugg för té-klunkare och kaffe-sörplaresom vill se precis hur mycket de har kvar i muggen. Tål värme upp till 400grader. Kan diskas i maskin. Tål mikrovågsugn och fungerar toppen pågas/el-spisplatta. Finns även i utförande som rymmer 11 cl och 50 cl. ",
+        "produktPris": 59,
+        "huvudkategori": 2,
+        "underkategori": 2,
+        "image": "./images/mugg.jpg"
+    },{
+        "id": 7,
+        "produktNamn": "Glas Litet 22 cl",
+        "produktBeskrivning": "Tunna små glas som passar lika bra att dricka ur som att servera i. Ugnsfasta upp till 100 grader. Tål frys, microvågsugn och diskmaskin.",
+        "produktPris": 15,
+        "huvudkategori": 2,
+        "underkategori": 2,
+        "image": "./images/glas.jpg"
+    },{
+        "id": 8,
+        "produktNamn": "Glas Snaps 6 cl",
+        "produktBeskrivning": "Tidlösa snapsglas för både julfesten och midsommarlunchen.",
+        "produktPris": 10,
+        "huvudkategori": 2,
+        "underkategori": 2,
+        "image": "./images/snapsglas.jpg"
+    },{
+        "id": 9,
+        "produktNamn": "Stekpanna Gjutjärn",
+        "produktBeskrivning": "Svensktillverkad stekpanna i gjutjärn från Ronneby bruk. Fungerar på alla typer av spisar och hällar, inkl. induktion. Grytan är grundinstekt med svensk KRAV-märkt rapsolja. Rengör grytan med hett vatten och diskborste, använd ej diskmedel och torka grytan väl efteråt.",
+        "produktPris": 699,
+        "huvudkategori": 2,
+        "underkategori": 11,
+        "image": "./images/stekpanna.jpg"
+    },{
+        "id": 10,
+        "produktNamn": "Stekgryta Gjutjärn Rund 4 L",
+        "produktBeskrivning": "Svensktillverkad gryta i gjutjärn från Ronneby bruk. Fungerar på alla typer av spisar och hällar, inkl. induktion. Grytan är grundinstekt med svensk KRAV-märkt rapsolja. Rengör grytan med hett vatten och diskborste, använd ej diskmedel och torka grytan väl efteråt.",
+        "produktPris": 899,
+        "huvudkategori": 2,
+        "underkategori": 11,
+        "image": "./images/stekgryta.jpg"
+    },{
+        "id": 11,
+        "produktNamn": "Plättpanna Gjutjärn",
+        "produktBeskrivning": "Svensktillverkad plättpanna i gjutjärn från Ronneby bruk. Fungerar på alla typer av spisar och hällar, inkl. induktion. Grytan är grundinstekt med svensk KRAV-märkt rapsolja. Rengör grytan med hett vatten och diskborste, använd ej diskmedel och torka grytan väl efteråt.",
+        "produktPris": 599,
+        "huvudkategori": 2,
+        "underkategori": 11,
+        "image": "./images/plattpanna.jpg"
+    },{
+        "id": 12,
+        "produktNamn": "Wokpanna Gjutgärn med trähandtag",
+        "produktBeskrivning": "En rejäl och bra wok på 30 cm med trähandtag som inte blir varmt. Denna gjutjärnspanna kan du med rätt skötsel ha hela livet. Trots att värmekällor kommer och går kommer alltid gjutjärnet bestå - denna panna kan du nämligen ha både på alla värmekällor, från öppen eld till induktionshäll.I en väl infettad gjutjärnspanna behövs det dessutom inte mycket fett.",
+        "produktPris": 929,
+        "huvudkategori": 2,
+        "underkategori": 11,
+        "image": "./images/wokpanna.jpg"
+    },{
+        "id": 13,
+        "produktNamn": "Kopp 30 cl Mörkgrå",
+        "produktBeskrivning": "Koppen perfekt för kafferepet, de lite mer modesta thé-drickarna som hellre sippar än klunkar thé, eller varför inte som dessert-skål. Koppen är en del  i vår nya servis-serie tillverkad av fine stone ware, även kallat högbränt flintgods. Förutom denna mörkgrå nyans kan du njuta av vit och ljusgrå som alla tre är supersköna att kombinera med varandra. Servisen är ugnsfast upp till 180 grader Celsius.",
+        "produktPris": 59,
+        "huvudkategori": 2,
+        "underkategori": 12,
+        "image": "./images/kopp.jpg"
+    },{
+        "id": 14,
+        "produktNamn": "Tallrik 27 cm Mörkgrå",
+        "produktBeskrivning": "Mörkgrå tallrik i vår nya servis-serie tillverkad av fine stone ware, även kallat högbränt flintgods. Finns i tre finfina nyanser, vit, ljusgrå och mörkgrå, som är supersköna att kombinera med varandra. Servisen är ugnsfast upp till 180 grader Celsius. ",
+        "produktPris": 79,
+        "huvudkategori": 2,
+        "underkategori": 12,
+        "image": "./images/tallrikgra.jpg"
+    },{
+        "id": 15,
+        "produktNamn": "Tallrik 27 cm Vit",
+        "produktBeskrivning": "Vit tallrik i vår nya servis-serie tillverkad av fine stone ware, även kallat högbränt flintgods. Finns i tre finfina nyanser, vit, ljusgrå och mörkgrå, som är supersköna att kombinera med varandra. Servisen är ugnsfast upp till 180 grader Celsius. ",
+        "produktPris": 79,
+        "huvudkategori": 2,
+        "underkategori": 12,
+        "image": "./images/tallrikvit.jpg"
+    },{
+        "id": 16,
+        "produktNamn": "Skål Stjärna Vit",
+        "produktBeskrivning": "Här är skålen med Star Quality! Stjärnskål i vitt porslin. Perfekt för att servera allt gottigt som julgodis, fudge, nötter, torkad frukt och annat. Tål diskmaskin och mikrovågsugn. Ugnsfast upp till 225°C.",
+        "produktPris": 49,
+        "huvudkategori": 2,
+        "underkategori": 12,
+        "image": "./images/skalstjarna.jpg"
+    },{
+        "id": 17,
+        "produktNamn": "Skärbräda Sten Grå",
+        "produktBeskrivning": "Skärbräda i grå marmor.",
+        "produktPris": 299,
+        "huvudkategori": 2,
+        "underkategori": 10,
+        "image": "./images/skarbrada.jpg"
+    },{
+        "id": 18,
+        "produktNamn": "Diskborste Trä/Tagel",
+        "produktBeskrivning": "Diskborste I trä med borste i tagel. Extra borsthuvuden kan köpas separat. Längd 23cm.",
+        "produktPris": 49,
+        "huvudkategori": 2,
+        "underkategori": 10,
+        "image": "./images/diskborste.jpg"
+    },{
+        "id": 19,
+        "produktNamn": "Grytlapp Grå",
+        "produktBeskrivning": "Skydda tassarna när du tar ut lasagnen med vår grytlapp i 100% bomull med polyesterfyllning.  Tvättas i 40 grader och kan strykas på medelvärme (2 prickar). Ej kemtvätt och blekmedel. Certifierad Öko tex standard",
+        "produktPris": 39,
+        "huvudkategori": 2,
+        "underkategori": 10,
+        "image": "./images/diskborste.jpg"
+    },{
+        "id": 20,
+        "produktNamn": "Mortel Sten Grå",
+        "produktBeskrivning": "Får kryddorna att dansa i köket genom att mortla dem i denna finfina mortel av grå marmor. Greppvänlig design på mortelstöten. ",
+        "produktPris": 399,
+        "huvudkategori": 2,
+        "underkategori": 10,
+        "image": "./images/mortel.jpg"
+    },{
+        "id": 21,
+        "produktNamn": "Tavla Earth",
+        "produktBeskrivning": "Snygg poster med planeten jorden från ett foto. Mycket fin och trevlig att ha på väggen.",
+        "produktPris": 229,
+        "huvudkategori": 2,
+        "underkategori": 3,
+        "image": "./images/tavla1.jpg"
+    },{
+        "id": 22,
+        "produktNamn": "Tavla Lion",
+        "produktBeskrivning": "En snygg svartvit poster med ett lejon. Ett riktigt snyggt och kraftfullt motiv som passar till många rum och inredningsstilar.",
+        "produktPris": 229,
+        "huvudkategori": 2,
+        "underkategori": 3,
+        "image": "./images/tavla2.jpg"
+    },{
+        "id": 23,
+        "produktNamn": "Tavla White Owl",
+        "produktBeskrivning": "Poster med foto på en vit uggla. Ett vackert och ljust fotografi som gör sig fint på vilken vägg som helst. ",
+        "produktPris": 229,
+        "huvudkategori": 2,
+        "underkategori": 3,
+        "image": "./images/tavla3.jpg"
+    },{
+        "id": 24,
+        "produktNamn": "Tavla Cotton Plant Blue",
+        "produktBeskrivning": "En riktigt snygg tavla med botaniskt motiv, en akvarell av bomullsplanta. Ett enkelt och stilrent motiv som detta är pefekt i en enkel ram eller uppsatt med en snygg klämma.",
+        "produktPris": 229,
+        "huvudkategori": 2,
+        "underkategori": 3,
+        "image": "./images/tavla4.jpg"
+    },{
+        "id": 25,
+        "produktNamn": "Sittpuff Liten Grå",
+        "produktBeskrivning": "Stabil och praktisk sittpuff som är hopvikbar. Förvara mössor, sjalar och vantar i hallen eller använd puffen i barnrummet för mjukisdjur eller kläder! Tillverkad i Eco-green polyestertyg bestående av återvunna PET-flaskor och bomull. Maxvikt 70kg. Höjd 31cm.",
+        "produktPris": 299,
+        "huvudkategori": 2,
+        "underkategori": 6,
+        "image": "./images/sittpuff.jpg"
+    },{
+        "id": 26,
+        "produktNamn": "Fåtölj Bambu",
+        "produktBeskrivning": "Superskön fåtölj i bambu med tillhörande rygg- och sittkudde i mjuk och slitstark canvastyg. Perfekt för lata dagar i trädgården eller på balkongen. Både bambun och canvastyget är obehandlat så skydda fåtöljen mot regn och rusk. Bambun är behandlad med ett lager klarlack och bör lackas ytterligare om den utsätts för regn och rusk under längre perioder, dvs att man lackar  in ytterligare före och efter säsong för bästa hållbarhet. Skulle det bli fläckar kan man sandpappra och tvätta av (ljummet vatten + mild tvål)och sedan lacka igen när träet torkat.",
+        "produktPris": 1699,
+        "huvudkategori": 2,
+        "underkategori": 6,
+        "image": "./images/fatolj.jpg"
+    },{
+        "id": 27,
+        "produktNamn": "Serveringsvagn Silver",
+        "produktBeskrivning": "Serveringsvagn i metall som står på svängbara hjul. Rullvagnen kan även användas som en schysst avlastningsyta eller dekoreras med växter, ljus eller snygga flaskor. Metallen är obehandlad och bör lackas vid användning utomhus eller i fuktiga miljöer. Hjulen går att låsa så att vagnen inte kan rulla iväg.",
+        "produktPris": 999,
+        "huvudkategori": 2,
+        "underkategori": 6,
+        "image": "./images/vagn.jpg"
+    },{
+        "id": 28,
+        "produktNamn": "Stege Bambu",
+        "produktBeskrivning": "Ihopfällbar stege för växter, kläder, handdukar eller andra saker som gillar att klättra. Observera att detta inte är personstege utan en stege för till exempel klättriga växter som tomater eller vinrankor. Eller en stege för smart och snygg förvaring av kläder i sovrummet eller något annat rum i huset. Flyttar du med stegen ut i trädgården eller till terassen fungerar den finfint som vädring eller torkställning av olika textila ting. Med några plankor förvandlar du även stegen lätt som en plätt till en hylla för inom eller utomhusbruk. Som växthylla, avlastningsyta vid grillen eller förvaring för utomhusköket. ",
+        "produktPris": 399,
+        "huvudkategori": 2,
+        "underkategori": 6,
+        "image": "./images/stege.jpg"
+    },{
+        "id": 29,
+        "produktNamn": "Kudde Sammet Beige",
+        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
+        "produktPris": 379,
+        "huvudkategori": 2,
+        "underkategori": 7,
+        "image": "./images/kudde1.jpg"
+    },{
+        "id": 30,
+        "produktNamn": "Kudde Linne Mörkgrå",
+        "produktBeskrivning": "Kudde med yttertyg i linne. Linnet kommer från franska odlingar som är certifierade av European FLAX® vilket garanterar en produktion som respekterar miljön.",
+        "produktPris": 379,
+        "huvudkategori": 2,
+        "underkategori": 7,
+        "image": "./images/kudde2.jpg"
+    },{
+        "id": 31,
+        "produktNamn": "Pläd Ull Rand Grå",
+        "produktBeskrivning": "Pläd i 100% ull. Perfekt att värma med sig med under vinterhalvåret samt en fin inredningsdetalj.",
+        "produktPris": 749,
+        "huvudkategori": 2,
+        "underkategori": 7,
+        "image": "./images/filt1.jpg"
+    },{
+        "id": 32,
+        "produktNamn": "Överkast Vågglad Enkel Brundröd",
+        "produktBeskrivning": "Härligt och höstigt överkast i våfflad och ekologisk rödbrun bomull. Passar till enkelsäng och höjer mysfaktorn avsevärt.",
+        "produktPris": 999,
+        "huvudkategori": 2,
+        "underkategori": 7,
+        "image": "./images/filt2.jpg"
+    },{
+        "id": 33,
+        "produktNamn": "Handduk linne Stor Ljusgrå",
+        "produktBeskrivning": "Stor och härlig liten handduk i 100% European Flax certifierat linne. Förtvättad för extra absorptionsförmåga. Tvättas i 60 grader och stryks på medeltemperatur. EJ blekning, kemtvätt eller torktumling. Får EJ vrängas. Storlek 70x130cm.",
+        "produktPris": 269,
+        "huvudkategori": 3,
+        "underkategori": 4,
+        "image": "./images/handduk1.jpg"
+    },{
+        "id": 34,
+        "produktNamn": "Handduk Bomull 3-pack vit",
+        "produktBeskrivning": "Mjuk och skön handduk i 100% ekologisk bomull.",
+        "produktPris": 99,
+        "huvudkategori": 3,
+        "underkategori": 4,
+        "image": "./images/handduk2.jpg"
+    },{
+        "id": 35,
+        "produktNamn": "Handduk Bomull Stor Mörkgrå",
+        "produktBeskrivning": "Mjuk, stor och skön handduk i 100% ekologisk bomull. Mörkgrå.",
+        "produktPris": 249,
+        "huvudkategori": 3,
+        "underkategori": 4,
+        "image": "./images/handduk3.jpg"
+    },{
+        "id": 36,
+        "produktNamn": "Handduk Bomull Stor Vit",
+        "produktBeskrivning": "Mjuk, stor och skön handduk i 100% ekologisk bomull. Vit.",
+        "produktPris": 249,
+        "huvudkategori": 3,
+        "underkategori": 4,
+        "image": "./images/handduk4.jpg"
+    },{
+        "id": 37,
+        "produktNamn": "Duschdraperi Petrol",
+        "produktBeskrivning": "Ett duschdraperi i vattenavvisande polyester. Öljetter i metall upptill. Duschdraperiringar säljs separat.",
+        "produktPris": 199,
+        "huvudkategori": 3,
+        "underkategori": 5,
+        "image": "./images/draperi1.jpg"
+    },{
+        "id": 38,
+        "produktNamn": "Duschdraperi Fototryck",
+        "produktBeskrivning": "Ett duschdraperi i vattenavvisande polyester med fototryck. Öljetter i metall upptill. Duschdraperiringar säljs separat.",
+        "produktPris": 199,
+        "huvudkategori": 3,
+        "underkategori": 5,
+        "image": "./images/draperi2.jpg"
+    },{
+        "id": 39,
+        "produktNamn": "Duschdraperi Fototryck",
+        "produktBeskrivning": "Ett duschdraperi i vattenavvisande polyester med tryck. Öljetter i metall upptill. Duschdraperiringar säljs separat.",
+        "produktPris": 199,
+        "huvudkategori": 3,
+        "underkategori": 5,
+        "image": "./images/draperi3.jpg"
+    },{
+        "id": 40,
+        "produktNamn": "Duschdraperi Grå",
+        "produktBeskrivning": "Ett duschdraperi i vattenavvisande polyester. Öljetter i metall upptill. Duschdraperiringar säljs separat.",
+        "produktPris": 199,
+        "huvudkategori": 3,
+        "underkategori": 5,
+        "image": "./images/draperi4.jpg"
+    },{
+        "id": 29,
+        "produktNamn": "Tvättkorg Offwhite",
+        "produktBeskrivning": "Cylinderformad tvättkorg med dubbla handtag.",
+        "produktPris": 149,
+        "huvudkategori": 3,
+        "underkategori": 8,
+        "image": "./images/korg1.jpg"
+    },{
+        "id": 29,
+        "produktNamn": "Kudde Sammet Beige",
+        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
+        "produktPris": 379,
+        "huvudkategori": 2,
+        "underkategori": 7,
+        "image": "./images/kudde1.jpg"
+    },{
+        "id": 29,
+        "produktNamn": "Kudde Sammet Beige",
+        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
+        "produktPris": 379,
+        "huvudkategori": 2,
+        "underkategori": 7,
+        "image": "./images/kudde1.jpg"
+    },{
+        "id": 29,
+        "produktNamn": "Kudde Sammet Beige",
+        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
+        "produktPris": 379,
+        "huvudkategori": 2,
+        "underkategori": 7,
+        "image": "./images/kudde1.jpg"
+    },{
+        "id": 29,
+        "produktNamn": "Kudde Sammet Beige",
+        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
+        "produktPris": 379,
+        "huvudkategori": 2,
+        "underkategori": 7,
+        "image": "./images/kudde1.jpg"
+    },{
+        "id": 29,
+        "produktNamn": "Kudde Sammet Beige",
+        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
+        "produktPris": 379,
+        "huvudkategori": 2,
+        "underkategori": 7,
+        "image": "./images/kudde1.jpg"
+    },{
+        "id": 29,
+        "produktNamn": "Kudde Sammet Beige",
+        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
+        "produktPris": 379,
+        "huvudkategori": 2,
+        "underkategori": 7,
+        "image": "./images/kudde1.jpg"
+    },{
+        "id": 29,
+        "produktNamn": "Kudde Sammet Beige",
+        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
+        "produktPris": 379,
+        "huvudkategori": 2,
+        "underkategori": 7,
+        "image": "./images/kudde1.jpg"
+    },{
+        "id": 29,
+        "produktNamn": "Kudde Sammet Beige",
+        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
+        "produktPris": 379,
+        "huvudkategori": 2,
+        "underkategori": 7,
+        "image": "./images/kudde1.jpg"
+    },{
+        "id": 29,
+        "produktNamn": "Kudde Sammet Beige",
+        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
+        "produktPris": 379,
+        "huvudkategori": 2,
+        "underkategori": 7,
+        "image": "./images/kudde1.jpg"
     }
 ]
