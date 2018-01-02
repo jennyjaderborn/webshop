@@ -21,7 +21,7 @@ body {
 }
 
 #content {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: auto;
     display: flex;
     justify-content: space-around;
@@ -33,6 +33,7 @@ body {
     color: white;
     padding-top: 20px;
     height: 400px;
+    width: 300px;
 }
 
 .underkategorival {
@@ -55,7 +56,7 @@ body {
 .produktval {
     display: flex;
     flex-direction: column;
-    margin: 50px;
+    margin: 30px;
     font-family: "courier new";
     text-align: center;
 }

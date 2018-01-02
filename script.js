@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+    $("#underkategorierna").hide();
                         
         var listOfHuvudkategorier;
                         
@@ -41,15 +41,17 @@ $(document).ready(function(){
                     .then(function(underkategori) {
                     listOfUnderkategorier = underkategori; // listOfCountries contains all countries from the jsonfile
                     //console.log(listOfUnderkategorier);   
-                   
+                    $("#underkategorierna").html(" ");
 
                     for(var i = 0; i < listOfUnderkategorier.length; i++){
                         
                     if(listOfUnderkategorier[i].huvudkategori == visaVilkenHuvudkategori) {
-                        $("#underkategorierna").append("<div class='underkategorival' onClick='visaProdukter("+ listOfUnderkategorier[i].id +")'>" + listOfUnderkategorier[i].underkategori + "</div>")
+                        $("#underkategorierna").append("<div class='underkategorival' onClick='visaProdukter("+ listOfUnderkategorier[i].id +")'>" + listOfUnderkategorier[i].underkategori + "</div>");
                     }
                     }
                     
+                    $("#underkategorierna").show();
+
                     });
                 
             }
@@ -66,6 +68,8 @@ $(document).ready(function(){
                 .then(function(produkter) {
                 listOfprodukter = produkter; // listOfCountries contains all countries from the jsonfile
                 //console.log(listOfprodukter);
+
+                $("#produkterna").html(" ");
 
                 for(var i = 0; i < listOfprodukter.length; i++) {
                     if(listOfprodukter[i].underkategori == visaVilkenUnderkategori) {
