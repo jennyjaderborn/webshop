@@ -1,6 +1,8 @@
 $(document).ready(function(){
     $("#underkategorierna").hide();
     $("#produktSida").hide();
+
+    
                         
         var listOfHuvudkategorier;
                         
@@ -25,7 +27,7 @@ $(document).ready(function(){
                     $("#meny").append("<div class='menyval' onClick='visaUnderkategorier("+ listOfHuvudkategorier[i].id +")'>" + listOfHuvudkategorier[i].huvudkategori + "</div>");
                     }
                     $("#meny").append("<div class='menyval'>" + "Kontakt" + "</div>");
-                    $("#meny").append("<div class='menyval'>" + "Kundvagn" + "</div>");                
+                    $("#meny").append("<div class='menyval' onClick='visaKundvagn()'>" + "Kundvagn" + "</div>");                
             }
             $("#underkategorierna").show();
 
@@ -87,7 +89,7 @@ $(document).ready(function(){
 
                 visaProdukt = function(val) {
                     $("#produktSida").html(" ");
-                    console.log(val);
+                    //console.log(val);
                 var visaVilkenProdukt = val;
                     $("#produkterna").hide();
                 for(var i = 0; i < listOfprodukter.length; i++){
@@ -98,15 +100,38 @@ $(document).ready(function(){
 
                 $("#produktSida").show();
 
-                addToCart = function(val) {
-                    console.log(val);
                 }
 
+                addToCart = function(val) {
+                    var varukorg = [];
+                    var visaVilkenVara = val;
+                    
+                    //console.log(val);
+                    varukorg.push(listOfprodukter[visaVilkenVara]);
+                    console.log(varukorg);
+                   
+
+                    for(var i = 0; i < varukorg.length; i++) {
+                        $("#testVarukorg").append(varukorg[i].id + varukorg[i].produktBeskrivning);
+                    }
+                   
+                    
                 }
 
             });
 
             }  
+
+            visaKundvagn = function(varukorg) {
+                window.location.assign("kundvagn.html")
+                
+            }
+
+            loopaKundvagnen();
+
+            function loopaKundvagnen(varukorg, visaVilkenVara) {
+                console.log(varukorg);
+            }
                     
  });
     

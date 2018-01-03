@@ -92,3 +92,9 @@ button {
     border:none;
     border-radius: 2px;
 }
+
+#testVarukorg {
+    background-color: purple;
+    height: 500px;
+    width: 600px;
+}
