@@ -50,14 +50,17 @@ $(document).ready(function(){
                     $("#meny").append("<div class='menyval' onClick='visaUnderkategorier("+ listOfHuvudkategorier[i].id +")'>" + listOfHuvudkategorier[i].huvudkategori + "</div>");
                     }
                     $("#meny").append("<div class='menyval'>" + "Kontakt" + "</div>");
-                    $("#meny").append("<div class='menyval' onClick='visaKundvagn()'>" + "Kundvagn" + "</div>");                
+                    $("#meny").append("<div class='menyval' onClick='visaKundvagn()'>" + "Kundvagn" + "</div>");
+                                    
             }
 
 
 
             visaUnderkategorier = function(val) {
-
+               console.log("klick");
                 $("#underkategorierna").html(" ");
+                $("#container").html(" ");
+                
                 
                 for(var i = 0; i < listOfUnderkategorier.length; i++){
                     if(listOfUnderkategorier[i].huvudkategori == val) {
@@ -71,7 +74,11 @@ $(document).ready(function(){
 
             visaProdukter = function(val) {
 
-                $("#produkterna").html(" ");
+                $("#container").html(" ");
+
+                $("#container").append("<div id='produkterna'>"+"</div>")
+
+                //$("#produkterna").html(" ");
 
                 for(var i = 0; i < listOfprodukter.length; i++) {
                     if(listOfprodukter[i].underkategori == val) {
@@ -79,26 +86,31 @@ $(document).ready(function(){
                     }
                 }
 
-                $("#produkterna").show();
+                //$("#produkterna").show();
             }
 
 
 
 
             visaProdukt = function(val) {
+
+                $("#container").html(" ");
                 
-                $("#produktSida").html(" ");
+                $("#container").append("<div id='produktSida'>"+"</div>")
+                
+                //$("#produktSida").html(" ");
+
 
                 //console.log(val);
            
-                $("#produkterna").hide();
+                //$("#produkterna").hide();
             for(var i = 0; i < listOfprodukter.length; i++){
                 if(listOfprodukter[i].id == val){
                     $("#produktSida").append("<div class='helaProduktSidan'>" + "<img class='produktSidaBild' src='"+listOfprodukter[i].image+"'>" + "<p>" + listOfprodukter[i].produktNamn +"</p>" + "<p>" + listOfprodukter[i].produktBeskrivning + "</p>" + "<p>" + listOfprodukter[i].produktPris+ "</p>" + "<button onClick='addToCart("+ listOfprodukter[i].id +")'>" + "Lägg till i varukorgen" + "</button>" + "</div>");
                 }
             }
 
-            $("#produktSida").show();
+            //$("#produktSida").show();
 
             }
 
@@ -132,7 +144,15 @@ $(document).ready(function(){
 
 
             visaKundvagn = function() {
-                $("#content").html("<p class='rubrikKundvagn'>Din varukorg</h2>");
+
+                $("#container").html(" ");
+
+                $("#container").append("<div id='helaVarukorgen'>"+"</div>")
+
+                $("#helaVarukorgen").append("<p class='rubrikKundvagn'>" + "Din varukorg" + "</p>");
+
+
+                //$("#container").html("<p class='rubrikKundvagn'>Din varukorg</h2>");
                 //window.location.assign("kundvagn.html")
 
                 var json_str = JSON.stringify(varukorg);
@@ -140,20 +160,21 @@ $(document).ready(function(){
                 
                 var loopVarukorg = JSON.parse(localStorage.shoppingCart);
 
-                $("#content").append("<div id='minVarukorg'>"+"</div>")
+                $("#helaVarukorgen").append("<div id='minVarukorg'>"+"</div>")
                 for(var i = 0; i < loopVarukorg.length; i++) {
                     console.log(loopVarukorg);
-                    $("#minVarukorg").append("<div class='kundvagnen'>" + "<img class='produktSidaBild' src='"+loopVarukorg[i].image+"'>" + "<p>" + loopVarukorg[i].produktNamn +"</p>" + "<p>" + loopVarukorg[i].produktBeskrivning + "</p>" + "<p>" + loopVarukorg[i].produktPris + "</p>" + "<button>" + "Radera" + "</button>" + "</div>");
+                    $("#minVarukorg").append("<div class='kundvagnen'>" + "<img class='varukorgBild' src='"+loopVarukorg[i].image+"'>" + "<p>" + loopVarukorg[i].produktNamn +"</p>" + "<p>" + loopVarukorg[i].produktBeskrivning + "</p>" + "<p>" + loopVarukorg[i].produktPris + "</p>" + "<button>" + "Radera" + "</button>" + "</div>");
                 }
                 
-                var totalPrice = 0; 
+                var totalPrice = 0;
+                var fraktPrice = 55;
                 for(var i = 0; i < loopVarukorg.length; i++) {
                     totalPrice += loopVarukorg[i].produktPris;
                 }
+                totalPrice += fraktPrice;
 
-                $("#minVarukorg").append("<p class='rubrikKundvagn'>" + "Varukorgens summa: " + totalPrice + " kr" + "</p>")
+                $("#helaVarukorgen").append("<p class='rubrikKundvagn'>" + "Varukorgens summa(varav frakt: 55 kr): " + totalPrice + " kr" + "</p>")
 
-                
             }
 
 
