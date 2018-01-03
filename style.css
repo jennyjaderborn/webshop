@@ -24,10 +24,15 @@ body {
 #content {
     max-width: 1200px;
     margin: auto;
-    display: flex;
-    justify-content: space-around;
+    /*display: flex;*/
+    /*justify-content: space-around;*/
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+#container {
+    display: flex;
+    justify-content: space-around;   
 }
 
 #underkategorierna {
@@ -93,8 +98,16 @@ button {
     border-radius: 2px;
 }
 
-#testVarukorg {
-    background-color: purple;
-    height: 500px;
-    width: 600px;
+.kundvagnen {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    text-align: center;
+    margin: 10px;
+}
+
+.rubrikKundvagn {
+text-align: center;
+font-family: Courier New, Courier, monospace;
+font-size: 28px;
 }
