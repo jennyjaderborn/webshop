@@ -4,6 +4,55 @@ $(document).ready(function(){
 
     var varukorg = [];
 
+
+    //FETCHA KUNDER
+    
+    var listOfKunder;
+    
+        fetch("./kunder.json")
+        .then(function(response) {
+        return response.json();
+        })
+        .then(function(kunder) {
+        listOfKunder = kunder;
+        console.log(listOfKunder);
+    });
+
+    
+
+    $(".button2").hide();
+        
+        if(sessionStorage.username!= null){//om nån är inne
+            inloggad();
+        } else {
+
+            $(".button").click(function(){
+                console.log("hejhej");
+                for(var i = 0; i < listOfKunder.length; i++){
+                    //var user = listOfKunder[i].email;
+                    //var password = listOfKunder[i].password;
+                
+            
+                if(listOfKunder[i].email == $(".inputEmail").val() && listOfKunder[i].password == $(".inputPassword").val()){
+                    sessionStorage.username = listOfKunder[i].email;
+                    inloggad();
+                    console.log("rätt");
+                } else {
+                    console.log("fel");
+                    $(".button2").hide();
+                    }
+                }
+            });
+
+        }
+
+    function inloggad() {
+        $(".button").hide();
+        $(".button2").show();
+        $(".inputName, .label1, .label2").hide();
+    }
+             
+
     //FETCHA HUVUDKATEGORIER
         var listOfHuvudkategorier;
                         
@@ -174,7 +223,7 @@ $(document).ready(function(){
                 totalPrice += fraktPrice;
 
                 $("#helaVarukorgen").append("<p class='rubrikKundvagn'>" + "Varukorgens summa(varav frakt: 55 kr): " + totalPrice + " kr" + "</p>")
-
+                $("#helaVarukorgen").append("<button>" + "Skicka order" + "</button>");
             }
 
 
