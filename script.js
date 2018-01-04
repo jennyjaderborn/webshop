@@ -47,10 +47,17 @@ $(document).ready(function(){
         }
 
     function inloggad() {
-        $(".button").hide();
         $(".button2").show();
-        $(".inputName, .label1, .label2").hide();
+        $(".button").hide();
+        $(".inputEmail, .inputPassword, .label1, .label2").hide();
+        $("#bakgrund").hide();
     }
+
+    $(".button2").click(function(){ //logga ut-knapp
+        sessionStorage.clear()
+        location.reload();
+        
+                });
              
 
     //FETCHA HUVUDKATEGORIER
@@ -92,7 +99,7 @@ $(document).ready(function(){
 
     function loopaHuvudkategorier() {
 
-                $("#meny").append("<div class='menyval'>" + "Start" + "</div>");
+                $("#meny").append("<a href='index.html' class='menyval'>" + "Start" + "</a>");
                 $("#meny").append("<div class='menyval'>" + "Info" + "</div>");
 
                 for(var i = 0; i < listOfHuvudkategorier.length; i++){
@@ -109,6 +116,7 @@ $(document).ready(function(){
                console.log("klick");
                 $("#underkategorierna").html(" ");
                 $("#container").html(" ");
+                $("#bakgrund").hide();
                 
                 
                 for(var i = 0; i < listOfUnderkategorier.length; i++){
