@@ -329,75 +329,187 @@
         "image": "./images/korg1.jpg"
     },{
         "id": 41,
-        "produktNamn": "Kudde Sammet Beige",
-        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
-        "produktPris": 379,
-        "huvudkategori": 2,
-        "underkategori": 7,
-        "image": "./images/kudde1.jpg"
+        "produktNamn": "Tvättkorg Svart",
+        "produktBeskrivning": "Cylinderformad tvättkorg med dubbla handtag.",
+        "produktPris": 149,
+        "huvudkategori": 3,
+        "underkategori": 8,
+        "image": "./images/korg2.jpg"
     },{
         "id": 42,
-        "produktNamn": "Kudde Sammet Beige",
-        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
-        "produktPris": 379,
-        "huvudkategori": 2,
-        "underkategori": 7,
-        "image": "./images/kudde1.jpg"
+        "produktNamn": "Tvättkorg Trondheim Vit",
+        "produktBeskrivning": "En flätad tvättkorg med vit och grårandigt innanfoder.",
+        "produktPris": 449,
+        "huvudkategori": 3,
+        "underkategori": 8,
+        "image": "./images/korg3.jpg"
     },{
         "id": 43,
-        "produktNamn": "Kudde Sammet Beige",
-        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
-        "produktPris": 379,
-        "huvudkategori": 2,
-        "underkategori": 7,
-        "image": "./images/kudde1.jpg"
+        "produktNamn": "Tvättkorg Dhaka, beige",
+        "produktBeskrivning": "En flätad tvättkorg med lock och handtag.",
+        "produktPris": 399,
+        "huvudkategori": 3,
+        "underkategori": 8,
+        "image": "./images/korg4.jpg"
     },{
         "id": 44,
-        "produktNamn": "Kudde Sammet Beige",
-        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
-        "produktPris": 379,
-        "huvudkategori": 2,
-        "underkategori": 7,
-        "image": "./images/kudde1.jpg"
+        "produktNamn": "Tvålpump Grå",
+        "produktBeskrivning": "Pumpflaska för tvål, diskmedel eller handkräm. Flaskan rymmer 300 ml och är tillverkad av tålig polyresin och pumpen i metall.",
+        "produktPris": 149,
+        "huvudkategori": 3,
+        "underkategori": 9,
+        "image": "./images/accessoar.jpg"
     },{
         "id": 45,
-        "produktNamn": "Kudde Sammet Beige",
-        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
-        "produktPris": 379,
-        "huvudkategori": 2,
-        "underkategori": 7,
-        "image": "./images/kudde1.jpg"
+        "produktNamn": "Tandborstmugg Grå",
+        "produktBeskrivning": "Mugg i tålig polyresin för badrumstillbehör eller köksförvaring.",
+        "produktPris": 79,
+        "huvudkategori": 3,
+        "underkategori": 9,
+        "image": "./images/accessoar2.jpg"
     },{
         "id": 46,
-        "produktNamn": "Kudde Sammet Beige",
-        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
-        "produktPris": 379,
-        "huvudkategori": 2,
-        "underkategori": 7,
-        "image": "./images/kudde1.jpg"
+        "produktNamn": "Tvättmedel Washologi",
+        "produktBeskrivning": "Rent redan vid 40 grader. Washologis Vit&Kulörtvätt är effektiv och bevarar färgerna. Tvättmedlet innehåller inte blekmedel, inga färgämnen och tvättar rent även från lukt redan vid 40 grader. Tack vare den höga koncentrationen behöver du endast 30 ml per tvätt. Dosera rätt för vår miljö och framtid!",
+        "produktPris": 159,
+        "huvudkategori": 3,
+        "underkategori": 9,
+        "image": "./images/accessoar3.jpg"
     },{
         "id": 47,
-        "produktNamn": "Kudde Sammet Beige",
-        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
-        "produktPris": 379,
-        "huvudkategori": 2,
-        "underkategori": 7,
-        "image": "./images/kudde1.jpg"
+        "produktNamn": "Korg Kroksjön Vit",
+        "produktBeskrivning": "En korg i metalltråd med tre stycken sugproppar.",
+        "produktPris": 49,
+        "huvudkategori": 3,
+        "underkategori": 9,
+        "image": "./images/accessoar4.jpg"
     },{
         "id": 48,
-        "produktNamn": "Kudde Sammet Beige",
-        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
-        "produktPris": 379,
-        "huvudkategori": 2,
-        "underkategori": 7,
-        "image": "./images/kudde1.jpg"
+        "produktNamn": "Bänk Bambu",
+        "produktBeskrivning": "Hopfällbar bänk tillverkad av obehandlade bamburör.  En hopfällbar bänk är en riktig livräddare när du lider av brist på stolar och sittplatser. Våra bambubänkar fungerar bra som en plats för två eller tre. Kombinera med ett fårfäll, ullpläd eller en kudde och du har praktiskt taget en soffa. Finfin på balkongen, verandan, altanen eller på en mysig plats i trädgården. Bör behandlas om den används permanent utomhus.",
+        "produktPris": 499,
+        "huvudkategori": 4,
+        "underkategori": 13,
+        "image": "./images/utemobel1.jpg"
     },{
         "id": 49,
-        "produktNamn": "Kudde Sammet Beige",
-        "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
-        "produktPris": 379,
-        "huvudkategori": 2,
-        "underkategori": 7,
-        "image": "./images/kudde1.jpg"
+        "produktNamn": "Bänk Trä/Metall",
+        "produktBeskrivning": "Bänk med skiva i obehandlad kinesisk gran och svartlackade metallben som kan fällas ihop. Perfekt att ha på balkongen, på landet eller bara att slänga upp hemma när det behövs extra sittplatser vid oväntat besök. Eftersom träet är obehandlat kan det med fördel oljas eller lackas för att tåla utomhusbruk bättre.",
+        "produktPris": 599,
+        "huvudkategori": 4,
+        "underkategori": 13,
+        "image": "./images/utemobel2.jpg"
+    },{
+        "id": 50,
+        "produktNamn": "Fåtölj Utomhus Brunlaserad",
+        "produktBeskrivning": "Brunlaserad fåtölj med dyna för utomhusbruk.",
+        "produktPris": 900,
+        "huvudkategori": 4,
+        "underkategori": 13,
+        "image": "./images/utemobel3.jpg"
+    },{
+        "id": 51,
+        "produktNamn": "Hylla Zink",
+        "produktBeskrivning": "Snygg hylla i zink för utomhusbruk. Passar perfekt på balkongen med gröna växter",
+        "produktPris": 159,
+        "huvudkategori": 4,
+        "underkategori": 13,
+        "image": "./images/utemobel4.jpg"
+    },{
+        "id": 52,
+        "produktNamn": "Kruka Betong Kub",
+        "produktBeskrivning": "Kruka i riktig betong. Inget hål i botten vilket gör den känslig för frost. Bör förvaras upp och ner om de står tomma utomhus.",
+        "produktPris": 69,
+        "huvudkategori": 4,
+        "underkategori": 14,
+        "image": "./images/kruka1.jpg"
+    },{
+        "id": 53,
+        "produktNamn": "Kruka Betong Rund",
+        "produktBeskrivning": "Kruka i riktig betong. Inget hål i botten vilket gör den känslig för frost. Bör förvaras upp och ner om de står tomma utomhus.",
+        "produktPris": 79,
+        "huvudkategori": 4,
+        "underkategori": 14,
+        "image": "./images/kruka2.jpg"
+    },{
+        "id": 54,
+        "produktNamn": "Kruka Terrakotta",
+        "produktBeskrivning": "Den porösa terrakottan håller kvar överflödigt vatten, så att plantan kan suga åt sig fukten när det behövs.",
+        "produktPris": 59,
+        "huvudkategori": 4,
+        "underkategori": 14,
+        "image": "./images/kruka3.jpg"
+    },{
+        "id": 55,
+        "produktNamn": "Blomlåda Gråbrun",
+        "produktBeskrivning": "Finaste blomlådan. Du kan placera hyllplanet antingen i botten av blomlådan eller högst upp, beroende på hur du vill ställa dina krukor.",
+        "produktPris": 399,
+        "huvudkategori": 4,
+        "underkategori": 14,
+        "image": "./images/kruka4.jpg"
+    },{
+        "id": 56,
+        "produktNamn": "Hängalykta Burk/Flaska",
+        "produktBeskrivning": "Paket med två ljuslyktor i glas med metallhäng.",
+        "produktPris": 59,
+        "huvudkategori": 4,
+        "underkategori": 15,
+        "image": "./images/lykta1.jpg"
+    },{
+        "id": 57,
+        "produktNamn": "Ljuslykta Svart",
+        "produktBeskrivning": "Lykta i svart för blockljus, utomhusbruk.",
+        "produktPris": 199,
+        "huvudkategori": 4,
+        "underkategori": 15,
+        "image": "./images/lykta2.jpg"
+    },{
+        "id": 58,
+        "produktNamn": "Led Ljusslinga",
+        "produktBeskrivning": "Du kan göra ljusslingan personlig för att matcha årstiden eller din stil. Lägg bara till valfria dekorationer och ändra dem när du vill.",
+        "produktPris": 99,
+        "huvudkategori": 4,
+        "underkategori": 15,
+        "image": "./images/lykta3.jpg"
+    },{
+        "id": 59,
+        "produktNamn": "Solcellslampa ",
+        "produktBeskrivning": "Solcellslampa. Perfekt för trädgården.",
+        "produktPris": 99,
+        "huvudkategori": 4,
+        "underkategori": 15,
+        "image": "./images/lykta4.jpg"
+    },{
+        "id": 60,
+        "produktNamn": "Hink Zink",
+        "produktBeskrivning": "Hink i zinkplåt med fällbart handtag.",
+        "produktPris": 349,
+        "huvudkategori": 4,
+        "underkategori": 16,
+        "image": "./images/redskap1.jpg"
+    },{
+        "id": 61,
+        "produktNamn": "Sekatör Svart/Blå",
+        "produktBeskrivning": "De starka, rostfria stålbladen och silikonhandtaget gör det enkelt att klippa grenar och tjocka stjälkar.",
+        "produktPris": 89,
+        "huvudkategori": 4,
+        "underkategori": 16,
+        "image": "./images/redskap2.jpg"
+    },{
+        "id": 62,
+        "produktNamn": "Vattenkanna Zink",
+        "produktBeskrivning": "Vattenkannan är gjord av galvaniserat stål som ger ett bra skydd mot rost.",
+        "produktPris": 69,
+        "huvudkategori": 4,
+        "underkategori": 16,
+        "image": "./images/redskap3.jpg"
+    },{
+        "id": 63,
+        "produktNamn": "Växthus Vit",
+        "produktBeskrivning": "Skapar en gynnsam miljö för frön och plantor att gro i. Utomhusbruk.",
+        "produktPris": 169,
+        "huvudkategori": 4,
+        "underkategori": 16,
+        "image": "./images/redskap4.jpg"
     }
 ]

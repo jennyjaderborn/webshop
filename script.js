@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $("#underkategorierna").hide();
     $("#produktSida").hide();
+    $(".popupSkapaInlogg").hide();
 
     var varukorg = [];
 
@@ -22,7 +23,7 @@ $(document).ready(function(){
 
     $(".button2").hide();
         
-        if(sessionStorage.username!= null){//om nån är inne
+        if (sessionStorage.username!= null) {//om nån är inne
             inloggad();
         } else {
 
@@ -40,6 +41,7 @@ $(document).ready(function(){
                 } else {
                     console.log("fel");
                     $(".button2").hide();
+                    alert("Fel lösen! Försök igen");
                     }
                 }
             });
@@ -51,6 +53,7 @@ $(document).ready(function(){
         $(".button").hide();
         $(".inputEmail, .inputPassword, .label1, .label2").hide();
         $("#bakgrund").hide();
+        //$(".popupSkapaInlogg").hide();
     }
 
     $(".button2").click(function(){ //logga ut-knapp
@@ -71,6 +74,7 @@ $(document).ready(function(){
         listOfHuvudkategorier = huvudkategorier;
 
             loopaHuvudkategorier();
+
         });
 
         //FETCHA UNDERKATEGORIER
@@ -117,6 +121,7 @@ $(document).ready(function(){
                 $("#underkategorierna").html(" ");
                 $("#container").html(" ");
                 $("#bakgrund").hide();
+                $(".popupSkapaInlogg").hide();
                 
                 
                 for(var i = 0; i < listOfUnderkategorier.length; i++){
@@ -163,7 +168,7 @@ $(document).ready(function(){
                 //$("#produkterna").hide();
             for(var i = 0; i < listOfprodukter.length; i++){
                 if(listOfprodukter[i].id == val){
-                    $("#produktSida").append("<div class='helaProduktSidan'>" + "<img class='produktSidaBild' src='"+listOfprodukter[i].image+"'>" + "<p>" + listOfprodukter[i].produktNamn +"</p>" + "<p>" + listOfprodukter[i].produktBeskrivning + "</p>" + "<p>" + listOfprodukter[i].produktPris+ "</p>" + "<button onClick='addToCart("+ listOfprodukter[i].id +")'>" + "Lägg till i varukorgen" + "</button>" + "</div>");
+                    $("#produktSida").append("<div class='helaProduktSidan'>" + "<img class='produktSidaBild' src='"+listOfprodukter[i].image+"'>" + "<p>" + listOfprodukter[i].produktNamn +"</p>" + "<p>" + listOfprodukter[i].produktBeskrivning + "</p>" + "<p>" + listOfprodukter[i].produktPris+ "</p>" + "<button class='addToCartButton' onClick='addToCart("+ listOfprodukter[i].id +")'>" + "Lägg till i varukorgen" + "</button>" + "</div>");
                 }
             }
 
@@ -220,7 +225,7 @@ $(document).ready(function(){
                 $("#helaVarukorgen").append("<div id='minVarukorg'>"+"</div>")
                 for(var i = 0; i < loopVarukorg.length; i++) {
                     console.log(loopVarukorg);
-                    $("#minVarukorg").append("<div class='kundvagnen'>" + "<img class='varukorgBild' src='"+loopVarukorg[i].image+"'>" + "<p>" + loopVarukorg[i].produktNamn +"</p>" + "<p>" + loopVarukorg[i].produktBeskrivning + "</p>" + "<p>" + loopVarukorg[i].produktPris + "</p>" + "<button>" + "Radera" + "</button>" + "</div>");
+                    $("#minVarukorg").append("<div class='kundvagnen'>" + "<img class='varukorgBild' src='"+loopVarukorg[i].image+"'>" + "<p>" + loopVarukorg[i].produktNamn +"</p>" + "<p>" + loopVarukorg[i].produktBeskrivning + "</p>" + "<p>" + loopVarukorg[i].produktPris + "</p>" + "<button class='raderaButton'>" + "Radera" + "</button>" + "</div>");
                 }
                 
                 var totalPrice = 0;
@@ -231,9 +236,83 @@ $(document).ready(function(){
                 totalPrice += fraktPrice;
 
                 $("#helaVarukorgen").append("<p class='rubrikKundvagn'>" + "Varukorgens summa(varav frakt: 55 kr): " + totalPrice + " kr" + "</p>")
-                $("#helaVarukorgen").append("<button>" + "Skicka order" + "</button>");
+                $("#helaVarukorgen").append("<button class='sendOrderButton' onClick='skickaOrder()'>" + "Skicka order" + "</button>");
             }
 
+            skickaOrder = function() {
+
+                if(sessionStorage.username!= null){//om nån är inne
+                    alert("Tack, din order är lagd!")
+                } else {
+                    $("#container").html(" ");
+                    $("#container").append("<div id='helaSkapaInlogg'>"+"</div>");
+                    $("#helaSkapaInlogg").append("<div class='popupSkapaInlogg'>" +"</div>");
+                    
+                    $(".popupSkapaInlogg").append("<p class='skapaInlogg'>" + "För att skicka din order var god, logga in!" + "</br>" + "Ej medlem? Skapa konto nedan." + "</p>"
+                    + "<input class='inputEmailSkapa' value=' email' type='text'>" + "</input>" + 
+                    "<input class='inputPasswordSkapa' value=' password' type='text'>" + "</input>" +
+                    "<button class='skapaButton'>" + "Skapa konto" + "</button>");
+
+                    //$(".popupSkapaInlogg").show();
+                }
+            }
+
+
+            //JS FÖR ADMINSIDA 
+
+            //Logga in!
+
+            var admin = "test";
+            var adminPassword = "password";
+
+
+            $(".ulKunder").hide();
+            $(".logutAdmin").hide();
+
+
+            if(sessionStorage.admin!= null){//om nån är inne
+                inloggadAdmin();
+        
+            } else { 
+                $(".popupRuta").show();
+                $(".ulKunder").hide();
+                
+                $(".loginAdmin").click(function(){
+
+                    if(admin == $(".inputEmailAdmin").val() && adminPassword == $(".inputPasswordAdmin").val()){
+                        sessionStorage.admin="Admin";
+                        inloggadAdmin();
+                    } 
+                    else {
+                        alert("fel lösen");
+                    }
+
+                });
+
+
+                }
+
+
+            // Loopa ut kundlista 
+
+
+            function inloggadAdmin(){
+                $(".popupRuta").hide();
+
+            $(".kundlista").click(function(){
+                $(".ulKunder").html(" ");
+                $(".ulKunder").show();
+                $("#bakgrund").hide();
+                $(".popupRuta").hide();
+               
+
+                for(var i = 0; i < listOfKunder.length; i++) {
+                    $(".ulKunder").append("<li>" + "id:" + listOfKunder[i].id + "</br>" + "email: " + listOfKunder[i].email + "</br>"  + "lösenord: " + listOfKunder[i].password + "</br>" + "</br>" + "</li>")
+                }
+                });
+
+            }
+                
 
 
         
@@ -303,7 +382,7 @@ $(document).ready(function(){
                     $("#produkterna").hide();
                 for(var i = 0; i < listOfprodukter.length; i++){
                     if(listOfprodukter[i].id == visaVilkenProdukt){
-                        $("#produktSida").append("<div class='helaProduktSidan'>" + "<img class='produktSidaBild' src='"+listOfprodukter[i].image+"'>" + "<p>" + listOfprodukter[i].produktNamn +"</p>" + "<p>" + listOfprodukter[i].produktBeskrivning + "</p>" + "<p>" + listOfprodukter[i].produktPris+ "</p>" + "<button onClick='addToCart("+ listOfprodukter[i].id +")'>" + "Lägg till i varukorgen" + "</button>" + "</div>");
+                        $("#produktSida").append("<div class='helaProduktSidan'>" + "<img class='produktSidaBild' src='"+listOfprodukter[i].image+"'>" + "<p>" + listOfprodukter[i].produktNamn +"</p>" + "<p>" + listOfprodukter[i].produktBeskrivning + "</p>" + "<p>" + listOfprodukter[i].produktPris+ "</p>" + "<button class='addToCartButton' onClick='addToCart("+ listOfprodukter[i].id +")'>" + "Lägg till i varukorgen" + "</button>" + "</div>");
                     }
                 }
 

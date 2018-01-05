@@ -3,7 +3,7 @@ body {
    padding: 0px;
 }
 
-#meny {
+#meny, #meny2 {
     color: white;
     background-color: black;
     height: 100px;
@@ -33,7 +33,7 @@ body {
 
 #container {
     width: 500px;
-    margin-top: 50px;
+   
 }
 
 #underkategorierna {
@@ -74,6 +74,8 @@ body {
     width: 800px;
     display: flex;
     justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .helaProduktSidan {
@@ -88,7 +90,7 @@ width: 400px;
 margin: auto;
 }
 
-button {
+.addToCartButton, .raderaButton, .sendOrderButton, .button, .button2 {
     width: 200px;
     height: 40px;
     margin: auto;
@@ -130,6 +132,7 @@ font-size: 28px;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 h1 {
@@ -155,4 +158,85 @@ a {
     height: 800px; 
     width: 100%;
     background-image:url(images/test5.jpg);
+    display: flex;
+    justify-content: center;
+}
+
+.popupRuta {
+    margin-top: 20px;
+    width: 500px;
+    height: 300px;
+    background-color: rgba(211, 211, 211, 0.8);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loggaInTack, .skapaInlogg {
+    font-size: 24px;
+}
+
+.inputEmailAdmin, .inputPasswordAdmin, .inputEmailSkapa, .inputPasswordSkapa {
+    margin: 10px;
+    height: 30px;
+    width: 200px;
+    border: 1px solid grey;
+}
+
+.loginAdmin, .logutAdmin, .skapaButton {
+    width: 200px;
+    height: 40px;
+    margin: auto;
+    background-color: #155E70;
+    color: white;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.popupSkapaInlogg {
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(211, 211, 211, 0.8);
+}
+
+#helaSkapaInlogg {
+    width: 800px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+}
+
+@media all and (max-width: 700px) {
+
+#header {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.formulär {
+    display: flex;
+    flex-direction: column;
+}
+
+.logga {
+    font-size: 18px;
+}
+
+.addToCartButton, .raderaButton, .sendOrderButton, .button, .button2 {
+    width: 100px;
+    height: 30px;
+}
+
+
 }
