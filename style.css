@@ -323,11 +323,9 @@ a {
    justify-content: center;
    /*align-items: center;
    margin: auto;*/
-   background-color: red;
 }
 
 #minVarukorg {
-    background-color: green;
     display: flex;
     flex-direction: column;
     justify-content: center;
