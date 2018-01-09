@@ -90,7 +90,7 @@ width: 400px;
 margin: auto;
 }
 
-.addToCartButton, .raderaButton, .sendOrderButton, .button, .button2 {
+.addToCartButton, .raderaButton, .sendOrderButton, .buttonLoggaIn, .buttonLoggaUt {
     width: 200px;
     height: 40px;
     margin: auto;
@@ -176,7 +176,7 @@ a {
     font-size: 24px;
 }
 
-.inputEmailAdmin, .inputPasswordAdmin, .inputEmailSkapa, .inputPasswordSkapa, .inputEmail, .inputPassword {
+.inputEmailAdmin, .inputPasswordAdmin, .inputEmailSkapa, .inputPasswordSkapa, .inputEmail, .inputPassword, .inputAdressSkapa, .inputNamnSkapa {
     margin: 10px;
     height: 30px;
     width: 200px;

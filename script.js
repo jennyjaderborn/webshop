@@ -4,6 +4,7 @@ $(document).ready(function(){
     $(".popupSkapaInlogg").hide();
 
     var varukorg = [];
+    var sparaOrder = [];
 
 
     //FETCHA KUNDER
@@ -20,19 +21,16 @@ $(document).ready(function(){
     });
 
     
-
-    $(".button2").hide();
+//INLOGG indexssida
+    $(".buttonLoggaUt").hide();
         
         if (sessionStorage.username!= null) {//om nån är inne
             inloggad();
         } else {
 
-            $(".button").click(function(){
-                console.log("hejhej");
+            $(".buttonLoggaIn").click(function(){
+               
                 for(var i = 0; i < listOfKunder.length; i++){
-                    //var user = listOfKunder[i].email;
-                    //var password = listOfKunder[i].password;
-                
             
                 if(listOfKunder[i].email == $(".inputEmail").val() && listOfKunder[i].password == $(".inputPassword").val()){
                     sessionStorage.username = listOfKunder[i].email;
@@ -40,7 +38,7 @@ $(document).ready(function(){
                     console.log("rätt");
                 } else {
                     console.log("fel");
-                    $(".button2").hide();
+                    $(".buttonLoggaUt").hide();
                     alert("Fel lösen! Försök igen");
                     }
                 }
@@ -49,14 +47,13 @@ $(document).ready(function(){
         }
 
     function inloggad() {
-        $(".button2").show();
-        $(".button").hide();
+        $(".buttonLoggaUt").show();
+        $(".buttonLoggaIn").hide();
         $(".inputEmail, .inputPassword, .label1, .label2").hide();
         $("#bakgrund").hide();
-        //$(".popupSkapaInlogg").hide();
     }
 
-    $(".button2").click(function(){ //logga ut-knapp
+    $(".buttonLoggaUt").click(function(){ //logga ut-knapp
         sessionStorage.clear()
         location.reload();
         
@@ -117,7 +114,6 @@ $(document).ready(function(){
 
 
             visaUnderkategorier = function(val) {
-               console.log("klick");
                 $("#underkategorierna").html(" ");
                 $("#container").html(" ");
                 $("#bakgrund").hide();
@@ -140,7 +136,6 @@ $(document).ready(function(){
 
                 $("#container").append("<div id='produkterna'>"+"</div>")
 
-                //$("#produkterna").html(" ");
 
                 for(var i = 0; i < listOfprodukter.length; i++) {
                     if(listOfprodukter[i].underkategori == val) {
@@ -148,31 +143,25 @@ $(document).ready(function(){
                     }
                 }
 
-                //$("#produkterna").show();
             }
 
 
 
 
             visaProdukt = function(val) {
+                //console.log(val);
 
                 $("#container").html(" ");
                 
                 $("#container").append("<div id='produktSida'>"+"</div>")
                 
-                //$("#produktSida").html(" ");
 
-
-                //console.log(val);
-           
-                //$("#produkterna").hide();
             for(var i = 0; i < listOfprodukter.length; i++){
                 if(listOfprodukter[i].id == val){
                     $("#produktSida").append("<div class='helaProduktSidan'>" + "<img class='produktSidaBild' src='"+listOfprodukter[i].image+"'>" + "<p>" + listOfprodukter[i].produktNamn +"</p>" + "<p class='prodBesk'>" + listOfprodukter[i].produktBeskrivning + "</p>" + "<p>" + listOfprodukter[i].produktPris+ "</p>" + "<button class='addToCartButton' onClick='addToCart("+ listOfprodukter[i].id +")'>" + "Lägg till i varukorgen" + "</button>" + "</div>");
                 }
             }
 
-            //$("#produktSida").show();
 
             }
 
@@ -184,23 +173,6 @@ $(document).ready(function(){
 
 
                 varukorg.push(vara);
-                //console.log(vara);
-            
-                //console.log(val);
-                //varukorg.push(listOfprodukter[val]);
-                //console.log(varukorg);
-
-                //var json_str = JSON.stringify(varukorg);
-                //localStorage.produktList = json_str;
-
-                /*
-
-                var loopVarukorg = JSON.parse(localStorage.produktList);
-                loopVarukorg.push(listOfprodukter[val]);
-                var json_str = JSON.stringify(loopVarukorg);
-                localStorage.produktList = json_str;
-                //console.log(loopVarukorg);*/
-                //loopaKundvagnen();
 
             }
 
@@ -214,8 +186,6 @@ $(document).ready(function(){
                 $("#helaVarukorgen").append("<p class='rubrikKundvagn'>" + "Din varukorg" + "</p>");
 
 
-                //$("#container").html("<p class='rubrikKundvagn'>Din varukorg</h2>");
-                //window.location.assign("kundvagn.html")
 
                 var json_str = JSON.stringify(varukorg);
                 localStorage.shoppingCart = json_str; 
@@ -224,7 +194,7 @@ $(document).ready(function(){
 
                 $("#helaVarukorgen").append("<div id='minVarukorg'>"+"</div>")
                 for(var i = 0; i < loopVarukorg.length; i++) {
-                    console.log(loopVarukorg);
+                    //console.log(loopVarukorg);
                     $("#minVarukorg").append("<div class='kundvagnen'>" + "<img class='varukorgBild' src='"+loopVarukorg[i].image+"'>" + "<p>" + loopVarukorg[i].produktNamn +"</p>" + "<p>" + loopVarukorg[i].produktBeskrivning + "</p>" + "<p>" + loopVarukorg[i].produktPris + "</p>" + "<button class='raderaButton'>" + "Radera" + "</button>" + "</div>");
                 }
                 
@@ -243,18 +213,35 @@ $(document).ready(function(){
 
                 if(sessionStorage.username!= null){//om nån är inne
                     alert("Tack, din order är lagd!")
-                } else {
+                
+                } else { //Annars får du skapa medlem
                     $("#container").html(" ");
                     $("#container").append("<div id='helaSkapaInlogg'>"+"</div>");
                     $("#helaSkapaInlogg").append("<div class='popupSkapaInlogg'>" +"</div>");
                     
                     $(".popupSkapaInlogg").append("<p class='skapaInlogg'>" + "För att skicka din order var god, logga in!" + "</br>" + "Ej medlem? Skapa konto nedan." + "</p>"
-                    + "<input class='inputEmailSkapa' value=' email' type='text'>" + "</input>" + 
-                    "<input class='inputPasswordSkapa' value=' password' type='text'>" + "</input>" +
-                    "<button class='skapaButton'>" + "Skapa konto" + "</button>");
+                    + "<input class='inputNamnSkapa' value=' Namn' type='text'>" + "</input>"
+                    + "<input class='inputAdressSkapa' value=' Adress' type='text'>" + "</input>"
+                    + "<input class='inputEmailSkapa' value=' Email' type='text'>" + "</input>" + 
+                    "<input class='inputPasswordSkapa' value=' Password' type='text'>" + "</input>" + "<div>" +
+                    "Nyhetsbrev?<input type='checkbox' name='color' value='blue'/>Ja" + "<input type='checkbox' name='color' value='blue'/>Nej" + "</div>" +
+                     "<button class='skapaButton' onClick='skapaMedlem()'>" + "Skapa konto" + "</button>");                    
 
-                    //$(".popupSkapaInlogg").show();
                 }
+
+                skapaMedlem = function() {
+                    console.log("skapa");
+
+                    //console.log($(".inputNamnSkapa").val());
+                    var namnet = $(".inputNamnSkapa").val();
+                    var adressen = $(".inputAdressSkapa").val();
+                    var emailen = $(".inputEmailSkapa").val();
+                    var passworden = $(".inputPasswordSkapa").val();
+
+
+                }
+
+                
             }
 
 
@@ -311,116 +298,36 @@ $(document).ready(function(){
                 }
                 });
 
-            }
-                
+
+                $(".orderLista").click(function(){
+                   $(".ulKunder").html(" ");
+                   $(".ulKunder").show();
+                    $("#bakgrund").hide();
+                    $(".popupRuta").hide();
 
 
-        
-
-                //var loopVarukorg = JSON.parse(localStorage.produktList);
-
-                //console.log(loopVarukorg);
-            
-
-
-
-
-
-            
-
-
-
-/*
-
-            $("#underkategorierna").show();
-
-            visaUnderkategorier = function(val) {
-                //console.log(val);
-
-                var visaVilkenHuvudkategori = val;
-
-               
-                    $("#underkategorierna").html(" ");
-
-                    for(var i = 0; i < listOfUnderkategorier.length; i++){
-                        
-                    if(listOfUnderkategorier[i].huvudkategori == visaVilkenHuvudkategori) {
-                        $("#underkategorierna").append("<div class='underkategorival' onClick='visaProdukter("+ listOfUnderkategorier[i].id +")'>" + listOfUnderkategorier[i].underkategori + "</div>");
-                    }
-                    }
+                    var loopVarukorg = JSON.parse(localStorage.shoppingCart);
                     
-                    $("#underkategorierna").show();
-                    $("#produktSida").hide();
+                    sparaOrder.push(loopVarukorg);
+
+                    localStorage.setItem("sparaOrder", JSON.stringify(sparaOrder));
+                    var loopOrder = localStorage.getItem("sparaOrder");
+
+                    sparaOrder = JSON.parse(loopOrder);
+                    console.log(sparaOrder);
+
+                    document.getElementById("testArray").innerHTML = sparaOrder.id;
 
                     
-                
-            }
-
-            visaProdukter = function(val) {
-                //console.log(val);
-                var visaVilkenUnderkategori = val;
-
-                
-                $("#produktSida").hide();
-
-                $("#produkterna").html(" ");
-
-                for(var i = 0; i < listOfprodukter.length; i++) {
-                    if(listOfprodukter[i].underkategori == visaVilkenUnderkategori) {
-                        $("#produkterna").append("<div class='produktval' onClick='visaProdukt("+ listOfprodukter[i].id +")'>" + "<img class='produktbild' src='"+listOfprodukter[i].image+"'/>" + listOfprodukter[i].produktNamn + "</div>");
-                        //$("#produkterna").append("<img class='produktbild' src='"+listOfprodukter[i].image+"'/>")
-                        //$("#produkterna").append("<div class='produktval'>" + listOfprodukter[i].produktNamn + "</div>")
-                        //console.log(listOfprodukter[i].image);
-                    }
-                }
-                $("#produkterna").show();
-
-                visaProdukt = function(val) {
-                    $("#produktSida").html(" ");
-                    //console.log(val);
-                var visaVilkenProdukt = val;
-                    $("#produkterna").hide();
-                for(var i = 0; i < listOfprodukter.length; i++){
-                    if(listOfprodukter[i].id == visaVilkenProdukt){
-                        $("#produktSida").append("<div class='helaProduktSidan'>" + "<img class='produktSidaBild' src='"+listOfprodukter[i].image+"'>" + "<p>" + listOfprodukter[i].produktNamn +"</p>" + "<p>" + listOfprodukter[i].produktBeskrivning + "</p>" + "<p>" + listOfprodukter[i].produktPris+ "</p>" + "<button class='addToCartButton' onClick='addToCart("+ listOfprodukter[i].id +")'>" + "Lägg till i varukorgen" + "</button>" + "</div>");
-                    }
-                }
-
-                $("#produktSida").show();
-
-                }
-
-
-           
-
-            addToCart = function(val) {
-                var varukorg = [];
-                var visaVilkenVara = val;
-                
-                //console.log(val);
-                varukorg.push(listOfprodukter[visaVilkenVara]);
-                console.log(varukorg);
-
-                visaKundvagn = function(varukorg) {
-                    window.location.assign("kundvagn.html")
-                    loopaKundvagnen();
                     
-                }
+                    });
 
-                function loopaKundvagnen(varukorg, visaVilkenVara) {
-                    console.log(varukorg);
-                }
-               
+                    
 
-                //for(var i = 0; i < varukorg.length; i++) {
-                    //$("#testVarukorg").append(varukorg[i].id + varukorg[i].produktBeskrivning);
-                //}
-               
-                
+
+
+
             }
-
-            }  */
-
            
 
            
