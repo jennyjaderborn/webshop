@@ -5,7 +5,7 @@ $(document).ready(function(){
 
     var varukorg = [];
     var sparaOrder = [];
-
+    var medlemmar = [];
 
     //FETCHA KUNDER
     
@@ -24,23 +24,35 @@ $(document).ready(function(){
 //INLOGG indexssida
     $(".buttonLoggaUt").hide();
         
-        if (sessionStorage.username!= null) {//om nån är inne
+        if (sessionStorage.myUserName != null) {//om nån är inne
             inloggad();
         } else {
 
             $(".buttonLoggaIn").click(function(){
-               
+
                 for(var i = 0; i < listOfKunder.length; i++){
-            
-                if(listOfKunder[i].email == $(".inputEmail").val() && listOfKunder[i].password == $(".inputPassword").val()){
-                    sessionStorage.username = listOfKunder[i].email;
-                    inloggad();
-                    console.log("rätt");
-                } else {
-                    console.log("fel");
-                    $(".buttonLoggaUt").hide();
-                    alert("Fel lösen! Försök igen");
+
+                if(listOfKunder[i].email == $(".inputEmail").val()){
+                    console.log("användarnamnet finns");
+                    sessionStorage.setItem("myUserName", listOfKunder[i].email);
+                }
+
+            }
+
+            for(var i = 0; i < listOfKunder.length; i++){
+                
+                if(listOfKunder[i].password == $(".inputPassword").val()){
+                    console.log("lösenordet finns");
+                    sessionStorage.setItem("myUserPassword", listOfKunder[i].password);
                     }
+                
+                }
+
+                if(sessionStorage.myUserName != null && sessionStorage.myUserPassword != null){
+                    console.log("rätt lösenord");
+                    inloggad();
+                } else {
+                    alert("Fel lösenord!");
                 }
             });
 
@@ -167,12 +179,17 @@ $(document).ready(function(){
 
 
             addToCart = function(val) {
+
+                alert("Dina vara har lagts i kundvagnen");
                 //console.log(val);
 
                 var vara = listOfprodukter[val];
 
 
                 varukorg.push(vara);
+
+                localStorage.setItem("pushProdukt", JSON.stringify(varukorg));
+                varukorg = JSON.parse(localStorage.getItem("pushProdukt"));
 
             }
 
@@ -185,23 +202,19 @@ $(document).ready(function(){
 
                 $("#helaVarukorgen").append("<p class='rubrikKundvagn'>" + "Din varukorg" + "</p>");
 
+                varukorg = JSON.parse(localStorage.getItem("pushProdukt"));
 
-
-                var json_str = JSON.stringify(varukorg);
-                localStorage.shoppingCart = json_str; 
-                
-                var loopVarukorg = JSON.parse(localStorage.shoppingCart);
 
                 $("#helaVarukorgen").append("<div id='minVarukorg'>"+"</div>")
-                for(var i = 0; i < loopVarukorg.length; i++) {
+                for(var i = 0; i < varukorg.length; i++) {
                     //console.log(loopVarukorg);
-                    $("#minVarukorg").append("<div class='kundvagnen'>" + "<img class='varukorgBild' src='"+loopVarukorg[i].image+"'>" + "<p>" + loopVarukorg[i].produktNamn +"</p>" + "<p>" + loopVarukorg[i].produktBeskrivning + "</p>" + "<p>" + loopVarukorg[i].produktPris + "</p>" + "<button class='raderaButton'>" + "Radera" + "</button>" + "</div>");
+                    $("#minVarukorg").append("<div class='kundvagnen'>" + "<img class='varukorgBild' src='"+varukorg[i].image+"'>" + "<p>" + varukorg[i].produktNamn +"</p>" + "<p>" + varukorg[i].produktBeskrivning + "</p>" + "<p>" + varukorg[i].produktPris + "</p>" + "<button class='raderaButton'>" + "Radera" + "</button>" + "</div>");
                 }
                 
                 var totalPrice = 0;
                 var fraktPrice = 55;
-                for(var i = 0; i < loopVarukorg.length; i++) {
-                    totalPrice += loopVarukorg[i].produktPris;
+                for(var i = 0; i < varukorg.length; i++) {
+                    totalPrice += varukorg[i].produktPris;
                 }
                 totalPrice += fraktPrice;
 
@@ -210,6 +223,13 @@ $(document).ready(function(){
             }
 
             skickaOrder = function() {
+
+                var skickadProdukt = varukorg;
+                sparaOrder.push(skickadProdukt);
+                localStorage.setItem("order", JSON.stringify(sparaOrder));
+                sparaOrder = JSON.parse(localStorage.getItem("order"));
+                console.log(sparaOrder);
+                localStorage.removeItem("pushProdukt");
 
                 if(sessionStorage.username!= null){//om nån är inne
                     alert("Tack, din order är lagd!")
@@ -231,6 +251,8 @@ $(document).ready(function(){
 
                 skapaMedlem = function() {
                     console.log("skapa");
+
+                    medlemmar.push({id: 3, namn: $(".inputNamnSkapa").val(), email: $(".inputEmailSkapa").val(),  })
 
                     //console.log($(".inputNamnSkapa").val());
                     var namnet = $(".inputNamnSkapa").val();
@@ -304,23 +326,18 @@ $(document).ready(function(){
                    $(".ulKunder").show();
                     $("#bakgrund").hide();
                     $(".popupRuta").hide();
-
-
-                    var loopVarukorg = JSON.parse(localStorage.shoppingCart);
                     
-                    sparaOrder.push(loopVarukorg);
+                    sparaOrder = JSON.parse(localStorage.getItem("order"));
 
-                    localStorage.setItem("sparaOrder", JSON.stringify(sparaOrder));
-                    var loopOrder = localStorage.getItem("sparaOrder");
-
-                    sparaOrder = JSON.parse(loopOrder);
-                    console.log(sparaOrder);
-
-                    document.getElementById("testArray").innerHTML = sparaOrder.id;
-
-                    
+                    for(var i = 0; i < sparaOrder.length; i++) {
+                        $("#testArray").append("<p>" + sparaOrder[i][i].produktNamn + "</p>");
+                    }
+                    /*ha en tacksida istället. Vid skicka beställning - pushprodukt puschas till order
+                    och man skickas till tacksida.tryck på ok och där tömmer vi pushprodukt i storage */
                     
                     });
+
+                    
 
                     
 
