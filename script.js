@@ -274,7 +274,7 @@ $(document).ready(function(){
                     + "<input class='inputAdressSkapa' value=' Adress' type='text'>" + "</input>"
                     + "<input class='inputEmailSkapa' value=' Email' type='text'>" + "</input>" + 
                     "<input class='inputPasswordSkapa' value=' Password' type='text'>" + "</input>" + "<div>" +
-                    "Nyhetsbrev?<input type='checkbox' name='color' value='blue'/>Ja" + "<input type='checkbox' name='color' value='blue'/>Nej" + "</div>" +
+                    "Nyhetsbrev?<input type='checkbox' class='yesCheck'/>Ja" + "</div>" +
                      "<button class='skapaButton' onClick='skapaMedlem()'>" + "Skapa konto" + "</button>");                    
 
                 }
@@ -283,15 +283,25 @@ $(document).ready(function(){
                     console.log("skapa");
                     //var medlemmar = [];
 
-                    listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val()});
+                    if($(".yesCheck").is(':checked')){
+                        console.log("den e check")
+                        listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "JA"});
+                        
+                        localStorage.setItem("medlemmar", JSON.stringify(listOfKunder));
+                        listOfKunder = JSON.parse(localStorage.getItem("medlemmar"))
+                    }
+                    else {
+                        console.log("nejjjtack");
+                        listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "NEJ"});
+                        
+                        localStorage.setItem("medlemmar", JSON.stringify(listOfKunder));
+                        listOfKunder = JSON.parse(localStorage.getItem("medlemmar"))
+                    }
+
+                    /*listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val()});
 
                 localStorage.setItem("medlemmar", JSON.stringify(listOfKunder));
-                listOfKunder = JSON.parse(localStorage.getItem("medlemmar"));
-                    //console.log($(".inputNamnSkapa").val());
-                    var namnet = $(".inputNamnSkapa").val();
-                    var adressen = $(".inputAdressSkapa").val();
-                    var emailen = $(".inputEmailSkapa").val();
-                    var passworden = $(".inputPasswordSkapa").val();
+                listOfKunder = JSON.parse(localStorage.getItem("medlemmar"));*/
 
 
                 }
@@ -347,10 +357,12 @@ $(document).ready(function(){
                 $("#bakgrund").hide();
                 $(".popupRuta").hide();
                 $("#testArray").hide();
+                $("#emailLista").hide();
 
                 if (localStorage.medlemmar != null){
 
                 medlemmar = JSON.parse(localStorage.getItem("medlemmar"));
+                console.log(localStorage.medlemmar);
                 
                  for(var i = 0; i < medlemmar.length; i++) {
                      $(".ulKunder").append("<li>" + "id:" + medlemmar[i].id + "</br>" + "email: " + medlemmar[i].email + "</br>"  + "lösenord: " + medlemmar[i].password + "</br>" + "</br>" + "</li>")
@@ -373,6 +385,7 @@ $(document).ready(function(){
                    $(".ulKunder").hide();
                     $("#bakgrund").hide();
                     $(".popupRuta").hide();
+                    $("#emailLista").hide();
                     $("#testArray").show();
                     
                     
@@ -387,6 +400,25 @@ $(document).ready(function(){
                     /*ha en tacksida istället. Vid skicka beställning - pushprodukt puschas till order
                     och man skickas till tacksida.tryck på ok och där tömmer vi pushprodukt i storage */
                     
+                    });
+
+
+                    $(".epostLista").click(function(){
+                        $("#emailLista").html(" ");
+                        $(".ulKunder").hide();
+                         $("#bakgrund").hide();
+                         $(".popupRuta").hide();
+                         $("#testArray").hide();
+                         $("#emailLista").show();
+
+                        medlemmar = JSON.parse(localStorage.getItem("medlemmar"));
+                        console.log(localStorage.medlemmar);
+                        
+                         for(var i = 0; i < medlemmar.length; i++) {
+                             if(medlemmar[i].nyhetsbrev == "JA")
+                             $("#emailLista").append("<p>" + medlemmar[i].email + ", " + "</p>");
+                             console.log(medlemmar[i].email);
+                         }
                     });
 
 
