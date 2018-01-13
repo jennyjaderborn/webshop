@@ -164,7 +164,7 @@
         "produktNamn": "Tavla Earth",
         "produktBeskrivning": "Snygg poster med planeten jorden från ett foto. Mycket fin och trevlig att ha på väggen.",
         "produktPris": 229,
-        "huvudkategori": 2,
+        "huvudkategori": 1,
         "underkategori": 3,
         "image": "./images/tavla1.jpg"
     },{
@@ -172,7 +172,7 @@
         "produktNamn": "Tavla Lion",
         "produktBeskrivning": "En snygg svartvit poster med ett lejon. Ett riktigt snyggt och kraftfullt motiv som passar till många rum och inredningsstilar.",
         "produktPris": 229,
-        "huvudkategori": 2,
+        "huvudkategori": 1,
         "underkategori": 3,
         "image": "./images/tavla2.jpg"
     },{
@@ -180,7 +180,7 @@
         "produktNamn": "Tavla White Owl",
         "produktBeskrivning": "Poster med foto på en vit uggla. Ett vackert och ljust fotografi som gör sig fint på vilken vägg som helst. ",
         "produktPris": 229,
-        "huvudkategori": 2,
+        "huvudkategori": 1,
         "underkategori": 3,
         "image": "./images/tavla3.jpg"
     },{
@@ -188,7 +188,7 @@
         "produktNamn": "Tavla Cotton Plant Blue",
         "produktBeskrivning": "En riktigt snygg tavla med botaniskt motiv, en akvarell av bomullsplanta. Ett enkelt och stilrent motiv som detta är pefekt i en enkel ram eller uppsatt med en snygg klämma.",
         "produktPris": 229,
-        "huvudkategori": 2,
+        "huvudkategori": 1,
         "underkategori": 3,
         "image": "./images/tavla4.jpg"
     },{
@@ -196,7 +196,7 @@
         "produktNamn": "Sittpuff Liten Grå",
         "produktBeskrivning": "Stabil och praktisk sittpuff som är hopvikbar. Förvara mössor, sjalar och vantar i hallen eller använd puffen i barnrummet för mjukisdjur eller kläder! Tillverkad i Eco-green polyestertyg bestående av återvunna PET-flaskor och bomull. Maxvikt 70kg. Höjd 31cm.",
         "produktPris": 299,
-        "huvudkategori": 2,
+        "huvudkategori": 1,
         "underkategori": 6,
         "image": "./images/sittpuff.jpg"
     },{
@@ -204,7 +204,7 @@
         "produktNamn": "Fåtölj Bambu",
         "produktBeskrivning": "Superskön fåtölj i bambu med tillhörande rygg- och sittkudde i mjuk och slitstark canvastyg. Perfekt för lata dagar i trädgården eller på balkongen. Både bambun och canvastyget är obehandlat så skydda fåtöljen mot regn och rusk. Bambun är behandlad med ett lager klarlack och bör lackas ytterligare om den utsätts för regn och rusk under längre perioder, dvs att man lackar  in ytterligare före och efter säsong för bästa hållbarhet. Skulle det bli fläckar kan man sandpappra och tvätta av (ljummet vatten + mild tvål)och sedan lacka igen när träet torkat.",
         "produktPris": 1699,
-        "huvudkategori": 2,
+        "huvudkategori": 1,
         "underkategori": 6,
         "image": "./images/fatolj.jpg"
     },{
@@ -212,7 +212,7 @@
         "produktNamn": "Serveringsvagn Silver",
         "produktBeskrivning": "Serveringsvagn i metall som står på svängbara hjul. Rullvagnen kan även användas som en schysst avlastningsyta eller dekoreras med växter, ljus eller snygga flaskor. Metallen är obehandlad och bör lackas vid användning utomhus eller i fuktiga miljöer. Hjulen går att låsa så att vagnen inte kan rulla iväg.",
         "produktPris": 999,
-        "huvudkategori": 2,
+        "huvudkategori": 1,
         "underkategori": 6,
         "image": "./images/vagn.jpg"
     },{
@@ -220,7 +220,7 @@
         "produktNamn": "Stege Bambu",
         "produktBeskrivning": "Ihopfällbar stege för växter, kläder, handdukar eller andra saker som gillar att klättra. Observera att detta inte är personstege utan en stege för till exempel klättriga växter som tomater eller vinrankor. Eller en stege för smart och snygg förvaring av kläder i sovrummet eller något annat rum i huset. Flyttar du med stegen ut i trädgården eller till terassen fungerar den finfint som vädring eller torkställning av olika textila ting. Med några plankor förvandlar du även stegen lätt som en plätt till en hylla för inom eller utomhusbruk. Som växthylla, avlastningsyta vid grillen eller förvaring för utomhusköket. ",
         "produktPris": 399,
-        "huvudkategori": 2,
+        "huvudkategori": 1,
         "underkategori": 6,
         "image": "./images/stege.jpg"
     },{
@@ -228,7 +228,7 @@
         "produktNamn": "Kudde Sammet Beige",
         "produktBeskrivning": "Höstbeige kudde i härligt sammetstyg att bulla upp i soffan eller i sängen. Finns i tre olika säsongsinspirerade färger.",
         "produktPris": 379,
-        "huvudkategori": 2,
+        "huvudkategori": 1,
         "underkategori": 7,
         "image": "./images/kudde1.jpg"
     },{
@@ -236,7 +236,7 @@
         "produktNamn": "Kudde Linne Mörkgrå",
         "produktBeskrivning": "Kudde med yttertyg i linne. Linnet kommer från franska odlingar som är certifierade av European FLAX® vilket garanterar en produktion som respekterar miljön.",
         "produktPris": 379,
-        "huvudkategori": 2,
+        "huvudkategori": 1,
         "underkategori": 7,
         "image": "./images/kudde2.jpg"
     },{
@@ -244,7 +244,7 @@
         "produktNamn": "Pläd Ull Rand Grå",
         "produktBeskrivning": "Pläd i 100% ull. Perfekt att värma med sig med under vinterhalvåret samt en fin inredningsdetalj.",
         "produktPris": 749,
-        "huvudkategori": 2,
+        "huvudkategori": 1,
         "underkategori": 7,
         "image": "./images/filt1.jpg"
     },{
@@ -252,7 +252,7 @@
         "produktNamn": "Överkast Vågglad Enkel Brundröd",
         "produktBeskrivning": "Härligt och höstigt överkast i våfflad och ekologisk rödbrun bomull. Passar till enkelsäng och höjer mysfaktorn avsevärt.",
         "produktPris": 999,
-        "huvudkategori": 2,
+        "huvudkategori": 1,
         "underkategori": 7,
         "image": "./images/filt2.jpg"
     },{

@@ -15,6 +15,7 @@ body {
 
 .menyval {
     font-size: 16px;
+    color: white;
 }
 
 .menyval:hover {
@@ -47,10 +48,11 @@ body {
 
 .underkategorival {
     margin: 15px;
-    font-family: "courier new"
+    font-family: "courier new";
+    color: white;
 }
 
-#produkterna {
+#produkterna, #huvudKategoriProdukter {
     width: 800px;
     display: flex;
     flex-flow: row wrap;
@@ -68,6 +70,10 @@ body {
     margin: 30px;
     font-family: "courier new";
     text-align: center;
+}
+
+.vitLink {
+    color: white;
 }
 
 #produktSida {
@@ -96,9 +102,10 @@ margin: auto;
     margin: auto;
     background-color: #5A385A;
     color: white;
-    font-size: 14px;
+    font-size: 18px;
     border:none;
     border-radius: 2px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .kundvagnen {
@@ -135,7 +142,8 @@ font-size: 28px;
     margin-bottom: 20px;
 }
 
-h1 {
+#produktLink {
+    color: black;
 }
 
 #header {
@@ -151,7 +159,6 @@ h1 {
 
 a {
     text-decoration: none;
-    color: white;
 }
 
 #bakgrund {
@@ -227,15 +234,17 @@ a {
 .formulär {
     display: flex;
     flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .logga {
     font-size: 26px;
 }
 
-.addToCartButton, .raderaButton, .sendOrderButton, .button, .button2 {
+.addToCartButton, .raderaButton, .sendOrderButton, .buttonLoggaIn, .buttonLoggaUt {
     width: 140px;
     height: 40px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #meny, #meny2 {
@@ -281,7 +290,7 @@ a {
     font-family: "courier new"
 }
 
-#produkterna {
+#produkterna, #huvudKategoriProdukter {
     width: 100%;
     display: flex;
     justify-content: center;
