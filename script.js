@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 
     //var varukorg = [];
-    var medlemmar = [];
+    //svar medlemmar = [];
 
     //FETCHA KUNDER
     
@@ -40,6 +40,7 @@ $(document).ready(function(){
 
 
             $(".buttonLoggaIn").click(function(){
+                Parsemedlemmar = JSON.parse(localStorage.getItem("medlemmar"));
 
                 for(var i = 0; i < listOfKunder.length; i++){
 
@@ -59,12 +60,34 @@ $(document).ready(function(){
                 
                 }
 
-                if(sessionStorage.myUserName != null && sessionStorage.myUserPassword != null){
-                    console.log("rätt lösenord");
-                    inloggad();
-                } else {
-                    alert("Fel lösenord!");
+                
+
+                for(var i = 0; i < Parsemedlemmar.length; i++){
+                    
+                    if(Parsemedlemmar[i].email == $(".inputEmail").val()){
+                        console.log("användarnamnet finns");
+                        sessionStorage.setItem("myUserName", Parsemedlemmar[i].email);
+                    }
+                    
                 }
+                    
+                for(var i = 0; i < Parsemedlemmar.length; i++){
+                                    
+                     if(Parsemedlemmar[i].password == $(".inputPassword").val()){
+                         console.log("lösenordet finns");
+                        sessionStorage.setItem("myUserPassword", Parsemedlemmar[i].password);
+                    }
+                                    
+                }
+
+
+                    if(sessionStorage.myUserName != null && sessionStorage.myUserPassword != null){
+                        console.log("rätt lösenord");
+                        inloggad();
+                    } else {
+                        alert("Fel lösenord!");
+                    }
+                
             });
 
             $(".buttonBliMedlem").click(function(){
@@ -90,18 +113,25 @@ $(document).ready(function(){
                 console.log("skapa");
 
                 if($(".yesCheck").is(':checked')){
+
+                    Parsemedlemmar = JSON.parse(localStorage.getItem("medlemmar"));
+                    Parsemedlemmar.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "JA"});
+                    localStorage.setItem("medlemmar", JSON.stringify(Parsemedlemmar));
                     console.log("den e check")
-                    listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "JA"});
+                    /*listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "JA"});
                     
                     localStorage.setItem("medlemmar", JSON.stringify(listOfKunder));
-                    listOfKunder = JSON.parse(localStorage.getItem("medlemmar"))
+                    listOfKunder = JSON.parse(localStorage.getItem("medlemmar"))*/
                 }
                 else {
                     console.log("nejjjtack");
-                    listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "NEJ"});
+                    Parsemedlemmar = JSON.parse(localStorage.getItem("medlemmar"));
+                    Parsemedlemmar.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "NEJ"});
+                    localStorage.setItem("medlemmar", JSON.stringify(Parsemedlemmar));
+                    /*listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "NEJ"});
                     
                     localStorage.setItem("medlemmar", JSON.stringify(listOfKunder));
-                    listOfKunder = JSON.parse(localStorage.getItem("medlemmar"))
+                    listOfKunder = JSON.parse(localStorage.getItem("medlemmar"))*/
                 }
                 $("#helaSkapaInlogg").hide();
                 $(".formulär").show();
@@ -182,6 +212,15 @@ $(document).ready(function(){
 
     }
 
+    if (localStorage.medlemmar == null){
+        medlemmar = [];
+        localStorage.setItem("medlemmar", JSON.stringify(medlemmar));
+        Parsemedlemmar = JSON.parse(localStorage.getItem("medlemmar"));
+    
+    }
+
+
+
     function loopaHuvudkategorier() {
 
                 $("#meny").append("<a href='index.html' class='menyval'>" + "Start" + "</a>");
@@ -191,9 +230,11 @@ $(document).ready(function(){
                     $("#meny").append("<a href='#' class='menyval' onClick='visaUnderkategorier("+ listOfHuvudkategorier[i].id +")'>" + listOfHuvudkategorier[i].huvudkategori + " "+ "<i class='fa fa-angle-down' aria-hidden='true'> </i>" + "</a>");
                     }
                     $("#meny").append("<a href='#' class='menyval'>" + "Kontakt" + "</a>");
-                    $("#meny").append("<a href='#' class='menyval' onClick='visaKundvagn()'>" + "<i class='fa fa-shopping-cart' aria-hidden='true'>"+"</i>" + " Varukorg" + "</a>");
+                    $("#meny").append("<a href='#' class='menyval' onClick='visaKundvagn()'>" + "Varukorg" + "<div id='counter'></div>" + "</a>");
+                   
                                     
             }
+           
 
 
 
@@ -268,6 +309,7 @@ $(document).ready(function(){
                 Parsevarukorg.push(vara);
                 localStorage.setItem("pushProdukt", JSON.stringify(Parsevarukorg));
                 
+                $("#counter").html("(" + Parsevarukorg.length + ")");
             
             }
 
@@ -287,7 +329,7 @@ $(document).ready(function(){
                 $("#helaVarukorgen").append("<div id='minVarukorg'>"+"</div>")
                 for(var i = 0; i < Parsevarukorg.length; i++) {
                     //console.log(loopVarukorg);
-                    $("#minVarukorg").append("<div class='kundvagnen'>" + "<img class='varukorgBild' src='"+ Parsevarukorg[i].image+"'>" + "<p>" + Parsevarukorg[i].produktNamn +"</p>" + "<p>" + Parsevarukorg[i].produktBeskrivning + "</p>" + "<p>" + Parsevarukorg[i].produktPris + "</p>" + "<button class='raderaButton'>" + "Radera" + "</button>" + "</div>");
+                    $("#minVarukorg").append("<div class='kundvagnen'>" + "<img class='varukorgBild' src='"+ Parsevarukorg[i].image+"'>" + "<p>" + Parsevarukorg[i].produktNamn +"</p>" + "<p>" + Parsevarukorg[i].produktBeskrivning + "</p>" + "<p>" + Parsevarukorg[i].produktPris + "</p>" + "</div>");
                 }
                 
                 var totalPrice = 0;
@@ -323,8 +365,9 @@ $(document).ready(function(){
                 //localStorage.removeItem("pushProdukt");
 
                 //if(sessionStorage.myUserName!= null){//om nån är inne
-                    alert("Tack, din order är lagd!")
-                    $("#bakgrund").show();
+                $("#counter").html(" ");
+                    $("#container").html("<div id='tackOrder'><div/>");
+                   $("#tackOrder").append("<p>Tack! Din order är lagd och påväg hem till dig. Välkommen åter!</p>");
                 
                 } else { //Annars får du skapa medlem
                     $("#container").html(" ");
@@ -346,18 +389,30 @@ $(document).ready(function(){
                     //var medlemmar = [];
 
                     if($(".yesCheck").is(':checked')){
-                        console.log("den e check")
-                        listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "JA"});
+
+                        //var vara = listOfprodukter[val];
+                        Parsemedlemmar = JSON.parse(localStorage.getItem("medlemmar"));
+                        Parsemedlemmar.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "JA"});
+                        localStorage.setItem("medlemmar", JSON.stringify(Parsemedlemmar));
+                        console.log("den e check");
+                        
+                        /*listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "JA"});
                         
                         localStorage.setItem("medlemmar", JSON.stringify(listOfKunder));
-                        listOfKunder = JSON.parse(localStorage.getItem("medlemmar"))
+                        listOfKunder = JSON.parse(localStorage.getItem("medlemmar"))*/
                     }
                     else {
                         console.log("nejjjtack");
-                        listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "NEJ"});
+
+                        Parsemedlemmar = JSON.parse(localStorage.getItem("medlemmar"));
+                        Parsemedlemmar.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "NEJ"});
+                        localStorage.setItem("medlemmar", JSON.stringify(Parsemedlemmar));
+
+
+                        /*listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "NEJ"});
                         
                         localStorage.setItem("medlemmar", JSON.stringify(listOfKunder));
-                        listOfKunder = JSON.parse(localStorage.getItem("medlemmar"))
+                        listOfKunder = JSON.parse(localStorage.getItem("medlemmar"))*/
                     }
 
                     $("#helaSkapaInlogg").hide();
@@ -421,8 +476,12 @@ $(document).ready(function(){
                 $(".ulKunder").show();
                 $("#bakgrund").hide();
                 $(".popupRuta").hide();
-                $("#testArray").hide();
+                $("#orderArray").hide();
                 $("#emailLista").hide();
+
+                for(var i = 0; i < listOfKunder.length; i++){
+                    $(".ulKunder").append("<li>" + "id:" + listOfKunder[i].id + "</br>" + "email: " + listOfKunder[i].email + "</br>"  + "lösenord: " + listOfKunder[i].password + "</br>" + "</br>" + "</li>");
+                }
 
                 if (localStorage.medlemmar != null){
 
@@ -435,23 +494,17 @@ $(document).ready(function(){
 
                 }
 
-                else {
-                    for(var i = 0; i < listOfKunder.length; i++) {
-                        $(".ulKunder").append("<li>" + "id:" + listOfKunder[i].id + "</br>" + "email: " + listOfKunder[i].email + "</br>"  + "lösenord: " + listOfKunder[i].password + "</br>" + "</br>" + "</li>")
-                    }
-                }
                  });
                
 
 
                 $(".orderLista").click(function(){
-                   //$(".ulKunder").html(" ");
-                   $("#testArray").html(" ");
+                   $("#orderArray").html(" ");
                    $(".ulKunder").hide();
                     $("#bakgrund").hide();
                     $(".popupRuta").hide();
                     $("#emailLista").hide();
-                    $("#testArray").show();
+                    $("#orderArray").show();
                     
                     
                     ParsesparaOrder = JSON.parse(localStorage.getItem("order"));
@@ -459,11 +512,9 @@ $(document).ready(function(){
                     console.log(JSON.stringify(localStorage.getItem("order")));
 
                     for(var i = 0; i < ParsesparaOrder.length; i++) {
-                        $("#testArray").append("<p>" + ParsesparaOrder[i].Produktnamn + "</p>");
+                        $("#orderArray").append("<p class='seOrder'>" + ParsesparaOrder[i].Produktnamn + "</p>");
                         
                     }
-                    /*ha en tacksida istället. Vid skicka beställning - pushprodukt puschas till order
-                    och man skickas till tacksida.tryck på ok och där tömmer vi pushprodukt i storage */
                     
                     });
 
@@ -473,7 +524,7 @@ $(document).ready(function(){
                         $(".ulKunder").hide();
                          $("#bakgrund").hide();
                          $(".popupRuta").hide();
-                         $("#testArray").hide();
+                         $("#orderArray").hide();
                          $("#emailLista").show();
 
                         medlemmar = JSON.parse(localStorage.getItem("medlemmar"));
