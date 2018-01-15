@@ -2,6 +2,8 @@ $(document).ready(function(){
     $("#underkategorierna").hide();
     $("#produktSida").hide();
     $(".popupSkapaInlogg").hide();
+    $(".formulär").hide();
+
 
     //var varukorg = [];
     var medlemmar = [];
@@ -26,6 +28,16 @@ $(document).ready(function(){
         if (sessionStorage.myUserName != null) {//om nån är inne
             inloggad();
         } else {
+
+            $(".buttonÖppnaLoggaIn").click(function(){
+                $("#container").html(" ");
+                $("#bakgrund").show();
+                $(".formulär").show();
+                $("#helaSkapaInlogg").hide();
+
+                
+            });
+
 
             $(".buttonLoggaIn").click(function(){
 
@@ -55,6 +67,49 @@ $(document).ready(function(){
                 }
             });
 
+            $(".buttonBliMedlem").click(function(){
+                //$("#bakgrund").hide();
+                $("#container").html(" ");
+                //$("#bakgrund").html(" ");
+                $(".formulär").hide();
+
+                $("#bakgrund").show();
+                $("#bakgrund").append("<div id='helaSkapaInlogg'>"+"</div>");
+                $("#helaSkapaInlogg").append("<div class='popupSkapaInlogg'>" +"</div>");
+                
+                $(".popupSkapaInlogg").append("<p class='skapaInlogg'>" + "Skapa ditt konto här!" + "</p>"
+                + "<input class='inputNamnSkapa' value=' Namn' type='text'>" + "</input>"
+                + "<input class='inputAdressSkapa' value=' Adress' type='text'>" + "</input>"
+                + "<input class='inputEmailSkapa' value=' Email' type='text'>" + "</input>" + 
+                "<input class='inputPasswordSkapa' value=' Password' type='text'>" + "</input>" + "<div>" +
+                "Nyhetsbrev?<input type='checkbox' class='yesCheck'/>Ja" + "</div>" +
+                 "<button class='skapaButton' onClick='skapaMedlem()'>" + "Skapa konto" + "</button>");                    
+            });
+
+            skapaMedlem = function() {
+                console.log("skapa");
+
+                if($(".yesCheck").is(':checked')){
+                    console.log("den e check")
+                    listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "JA"});
+                    
+                    localStorage.setItem("medlemmar", JSON.stringify(listOfKunder));
+                    listOfKunder = JSON.parse(localStorage.getItem("medlemmar"))
+                }
+                else {
+                    console.log("nejjjtack");
+                    listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val(), nyhetsbrev: "NEJ"});
+                    
+                    localStorage.setItem("medlemmar", JSON.stringify(listOfKunder));
+                    listOfKunder = JSON.parse(localStorage.getItem("medlemmar"))
+                }
+                $("#helaSkapaInlogg").hide();
+                $(".formulär").show();
+
+
+
+            }
+
         }
 
     function inloggad() {
@@ -62,6 +117,10 @@ $(document).ready(function(){
         $(".buttonLoggaIn").hide();
         $(".inputEmail, .inputPassword, .label1, .label2").hide();
         $("#bakgrund").show();
+        $(".formulär").hide();
+        $(".buttonÖppnaLoggaIn").hide();
+        $(".buttonBliMedlem").hide();
+
     }
 
     $(".buttonLoggaUt").click(function(){ //logga ut-knapp
@@ -129,7 +188,7 @@ $(document).ready(function(){
                 $("#meny").append("<a href='#' class='menyval'>" + "Info" + "</a>");
 
                 for(var i = 0; i < listOfHuvudkategorier.length; i++){
-                    $("#meny").append("<a href='#' class='menyval' onClick='visaUnderkategorier("+ listOfHuvudkategorier[i].id +")'>" + listOfHuvudkategorier[i].huvudkategori + "</a>");
+                    $("#meny").append("<a href='#' class='menyval' onClick='visaUnderkategorier("+ listOfHuvudkategorier[i].id +")'>" + listOfHuvudkategorier[i].huvudkategori + " "+ "<i class='fa fa-angle-down' aria-hidden='true'> </i>" + "</a>");
                     }
                     $("#meny").append("<a href='#' class='menyval'>" + "Kontakt" + "</a>");
                     $("#meny").append("<a href='#' class='menyval' onClick='visaKundvagn()'>" + "<i class='fa fa-shopping-cart' aria-hidden='true'>"+"</i>" + " Varukorg" + "</a>");
@@ -214,6 +273,7 @@ $(document).ready(function(){
 
 
             visaKundvagn = function() {
+                $("#bakgrund").hide();
 
                 $("#container").html(" ");
 
@@ -243,6 +303,7 @@ $(document).ready(function(){
 
             skickaOrder = function() {
 
+            if(sessionStorage.myUserName!= null){//om nån är inne
                 Parsevarukorg = JSON.parse(localStorage.getItem("pushProdukt"));
                 for(var i = 0; i < Parsevarukorg.length; i++){
                     ParsesparaOrder = JSON.parse(localStorage.getItem("order"));
@@ -261,8 +322,9 @@ $(document).ready(function(){
                 //varukorg = [];
                 //localStorage.removeItem("pushProdukt");
 
-                if(sessionStorage.myUserName!= null){//om nån är inne
+                //if(sessionStorage.myUserName!= null){//om nån är inne
                     alert("Tack, din order är lagd!")
+                    $("#bakgrund").show();
                 
                 } else { //Annars får du skapa medlem
                     $("#container").html(" ");
@@ -298,6 +360,9 @@ $(document).ready(function(){
                         listOfKunder = JSON.parse(localStorage.getItem("medlemmar"))
                     }
 
+                    $("#helaSkapaInlogg").hide();
+                    $("#bakgrund").show();
+                    $(".formulär").show();
                     /*listOfKunder.push({id: 3, namn:$(".inputNamnSkapa").val(), adress: $(".inputAdressSkapa").val(), email: $(".inputEmailSkapa").val(), password: $(".inputPasswordSkapa").val()});
 
                 localStorage.setItem("medlemmar", JSON.stringify(listOfKunder));
@@ -351,7 +416,7 @@ $(document).ready(function(){
             function inloggadAdmin(){
                 $(".popupRuta").hide();
 
-            $(".kundlista").click(function(){
+            $(".kundLista").click(function(){
                 $(".ulKunder").html(" ");
                 $(".ulKunder").show();
                 $("#bakgrund").hide();
